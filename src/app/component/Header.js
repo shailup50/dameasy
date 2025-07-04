@@ -2,8 +2,8 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
-import message from "@/asserts/images/email.svg"
-import logo from "@/asserts/images/logo.png"
+import message from "../../asserts/images/email.svg"
+import logo from "../../asserts/images/logo.png"
 
 function Header() {
     const [isOpen, setIsOpen] = useState(false);

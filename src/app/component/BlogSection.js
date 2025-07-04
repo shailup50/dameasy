@@ -1,5 +1,5 @@
 import Image from "next/image";
-import product1 from "@/asserts/images/home/blog.webp"
+import product1 from "../../asserts/images/home/blog.webp"
 
 
 const blogData = [

@@ -5,9 +5,9 @@ import {
     FaInstagram,
     FaWhatsapp,
 } from "react-icons/fa";
-import whatsapp from "@/asserts/images/home/whatsapp.svg";
-import icon1 from "@/asserts/images/home/icon1.svg"
-import icon2 from "@/asserts/images/home/icon2.svg"
+import whatsapp from "../../asserts/images/home/whatsapp.svg";
+import icon1 from "../../asserts/images/home/icon1.svg"
+import icon2 from "../../asserts/images/home/icon2.svg"
 import Image from "next/image";
 
 
