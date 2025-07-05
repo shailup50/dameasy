@@ -20,6 +20,8 @@ import LocationSection from "./component/LocationSection";
 
 
 
+
+
 export default function Home() {
   const title = "Contract Manufacturing Made Easy"
 

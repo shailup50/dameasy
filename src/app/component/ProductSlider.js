@@ -9,7 +9,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
-import product1 from "../../asserts/images/home/apple-cider-vinegar.webp"
+// import product1 from "../../asserts/images/home/apple-cider-vinegar.webp"
 import product2 from "../../asserts/images/home/blueberry-jam.webp"
 import product3 from "../../asserts/images/home/ginger-garlic-paste.webp"
 import product4 from "../../asserts/images/home/honey-mustard-sachet.webp"
@@ -22,13 +22,13 @@ import Link from "next/link";
 
 
 const categories = [
+    // {
+    //     title: "Sauces & Condiments",
+    //     image: product1,
+    //     shortDesc: "Classic and innovative blends that excite taste buds.",
+    // },
     {
         title: "Sauces & Condiments",
-        image: product1,
-        shortDesc: "Classic and innovative blends that excite taste buds.",
-    },
-    {
-        title: "KETCHUP",
         image: product2,
         shortDesc: "Classic and innovative blends that excite taste buds.",
     },
