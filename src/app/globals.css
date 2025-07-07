@@ -124,7 +124,7 @@ html {
   display: none;
 }
 .flip_slider .swiper-slide.swiper-slide-active{
-  transform: scale(1);
+  transform: scale(1.05);
 }
 .flip_slider .swiper-slide.swiper-slide-active .perspective .transform-style {
   height: 100%;
@@ -170,9 +170,12 @@ html {
   top: 0;
   z-index: 999;
   background: #C3272B;
+  transition: all 0.5s;
+
 }
 .sticky_logo{
   display: none;
+  transition: all 0.5s;
 }
 .custom_header .pt-4{
   padding:8px 6px;

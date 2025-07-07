@@ -343,16 +343,16 @@ function page() {
                         {features.map((item, index) => (
                             <div
                                 key={index}
-                                className="bg-[#C3272B] text-white text-left py-10 p-6 md:p-10 rounded-lg   transition-transform   md:block flex gap-5 items-center hover:scale-105 shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]"
+                                className="bg-[#C3272B] text-white text-center py-10 p-6 md:p-10 rounded-lg   transition-transform   md:block flex gap-5 items-center hover:scale-105 shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]"
 
                             >
-                                <div className='h-auto'>
+                                <div className='h-auto text-center'>
 
-                                <Image src={item.icon} alt={item.title} className='w-18 mb-0 md:mb-6' />
+                                <Image src={item.icon} alt={item.title} className='w-18 mb-0 md:mb-6 mx-auto' />
                                 </div>
-                                <div>
-                                <h3 className="text-[22px] md:text-2xl font-semibold mb-2">{item.title}</h3>
-                                <p className="text-[18px] md:text-xl font-medium">{item.desc}</p>
+                                <div className='w-full'>
+                                <h3 className="text-[26px] md:text-3xl font-semibold  mb-2">{item.title}</h3>
+                                <p className="text-[22px] md:text-2xl font-medium">{item.desc}</p>
                                 </div>
                             </div>
                         ))}

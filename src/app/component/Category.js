@@ -110,8 +110,8 @@ export default function Category() {
     const [activeIndex, setActiveIndex] = useState(0);
     return (
         <div className="pt-12 md:pt-20 px-4 text-black text-center">
-            <h2 className="text-4xl md:text-5xl  font-bold mb-10 md:mb-14">
-               CATEGORY
+            <h2 className="text-4xl md:text-5xl  font-bold mb-10 md:mb-14 uppercase">
+            Packaging Solutions
             </h2>
 
             <div className="relative max-w-8xl mx-auto px-4">
