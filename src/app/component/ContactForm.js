@@ -1,10 +1,10 @@
 export default function ContactForm() {
     return (
       <section className="bg-black text-white py-12 md:py-16 px-4">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 ">
+        <div className="max-w-7xl mx-auto flex flex-wrap md:flex-nowrap gap-10 justify-between">
           {/* Left Text Block */}
-          <div className="md:w-[80%]">
-            <h2 className="text-3xl md:text-4xl font-bold leading-tight text-[#C3272B] mb-4">
+          <div className="md:w-[55%] w-full">
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight text-[#C3272B] mb-4">
               LET’S CREATE THE FUTURE OF FOOD TOGETHER
             </h2>
             <p className="text-xl md:text-2xl text-white">
@@ -14,29 +14,30 @@ export default function ContactForm() {
           </div>
 
           {/* Form Block */}
-          <form className="space-y-4">
+          <div className="w-full md:w-[40%]">
+          <form >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <input
                 type="text"
                 placeholder="First Name*"
-                className="w-full p-3 text-[#5B5B5B] font-medium outline-none bg-white rounded"
+                className="w-full p-3 text-[#5B5B5B] font-medium outline-none bg-white "
                 required
               />
               <input
                 type="text"
                 placeholder="Last Name"
-                className="w-full p-3 text-[#5B5B5B] font-medium outline-none bg-white rounded"
+                className="w-full p-3 text-[#5B5B5B] font-medium outline-none bg-white "
               />
               <input
                 type="text"
                 placeholder="Mobile Number*"
-                className="w-full p-3 text-[#5B5B5B] font-medium outline-none bg-white rounded"
+                className="w-full p-3 text-[#5B5B5B] font-medium outline-none bg-white "
                 required
               />
               <input
                 type="email"
                 placeholder="Your Email*"
-                className="w-full p-3 text-[#5B5B5B] font-medium outline-none bg-white rounded"
+                className="w-full p-3 text-[#5B5B5B] font-medium outline-none bg-white "
                 required
               />
             </div>
@@ -44,7 +45,7 @@ export default function ContactForm() {
             <textarea
               rows="4"
               placeholder="Message"
-              className="w-full p-3 text-[#5B5B5B] font-medium outline-none bg-white rounded"
+              className="w-full p-3 text-[#5B5B5B] my-4 font-medium outline-none bg-white "
             ></textarea>
 
             <button
@@ -54,6 +55,7 @@ export default function ContactForm() {
               Submit
             </button>
           </form>
+          </div>
         </div>
       </section>
     );

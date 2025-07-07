@@ -12,7 +12,7 @@ export default function Marquee({ texts = [], speed = 20 }) {
           <div key={i} className="flex shrink-0 min-w-max gap-6 px-4">
             {texts.map((text, index) => (
               <React.Fragment key={index}>
-                <span className="text-base md:text-xl font-semibold text-white">
+                <span className="text-[18px] md:text-[24px] font-bold text-white uppercase">
                   {text}
                 </span>
                 {index !== texts.length - 1 && (

@@ -15,7 +15,9 @@ html {
 .font2 {
   font-family: var(--secondary-font);
 }
-
+.font-btn{
+  font-family: "Alfa Slab One", serif;
+}
 
 @keyframes marquee-loop {
   0% {
@@ -86,5 +88,78 @@ html {
 }
 
 .product_card .swiper-slide-active {
-  box-shadow:0 0px 5px 3px rgb(0 0 0 / 38%);
+  box-shadow: 0 0px 5px 3px rgb(0 0 0 / 38%);
+}
+
+.perspective {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+.flip_slider .swiper-slide{
+  transform: scale(0.9);
+}
+
+.flip_slider .swiper-slide .perspective .transform-style {
+  height: 314px;
+
+}
+.flip_slider .swiper-slide .perspective{
+  display: flex;
+  align-items: center;
+}
+.flip_slider .swiper-slide .perspective .transform-style p,
+.flip_slider .swiper-slide .perspective .transform-style a {
+  display: none;
+}
+.flip_slider .swiper-slide.swiper-slide-active{
+  transform: scale(1);
+}
+.flip_slider .swiper-slide.swiper-slide-active .perspective .transform-style {
+  height: 100%;
+
+}
+
+.flip_slider .swiper-slide.swiper-slide-active .perspective .transform-style p
+ {
+  display: block;
+}
+.flip_slider .swiper-slide.swiper-slide-active  .perspective .transform-style a{
+  display: inline-block;
+}
+
+.flip_slider .swiper-slide.swiper-slide-active .front_side h3{
+  font-size: 26px;
+  color: #C3272B;
+}
+.flip_slider .swiper-slide.swiper-slide-active .front_side p{
+  display: inline-block;
+}
+.middle_white_card .swiper-slide-active .radius_img .shadow-lg {
+  background:#fff;
+}
+.card_group .rounded-lg:last-child{
+  background: #F8AB1D;
+  color: #000;
+}
+.card_group .rounded-lg:last-child img{
+  filter: brightness(1) invert(1);
+}
+.back_side ul{
+  list-style: disc;
+  text-align: left;
+}
+.back_side ul li + li{
+  margin-top: 5px;
 }

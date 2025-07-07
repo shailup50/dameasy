@@ -11,8 +11,8 @@ import img3 from "../asserts/images/home/image3.webp"
 import step from "../asserts/images/home/step.svg"
 import ProductSlider from "./component/ProductSlider";
 import BlogSection from "./component/BlogSection";
-import ContactForm from "./component/ContactForm";
-import LocationSection from "./component/LocationSection";
+// import ContactForm from "./component/ContactForm";
+// import LocationSection from "./component/LocationSection";
 
 
 
@@ -23,7 +23,7 @@ import LocationSection from "./component/LocationSection";
 
 
 export default function Home() {
-  const title = "Contract Manufacturing Made Easy"
+  const title =  `Contract Manufacturing <br/> Made Easy`
 
   const items = [
     "Custom CRAFTED",
@@ -77,9 +77,9 @@ export default function Home() {
 
         <WeAre title={about.title} subtitle={about.subtitle} description={about.description} img={about.img} />
 
-        <section className="max-w-7xl mx-auto px-4 py-6 md:py-12">
-          <h2 className="text-4xl md:text-6xl font-semibold mb-4 text-[#C3272B]">3 WAYS</h2>
-          <h3 className="text-4xl md:text-6xl font-semibold mb-10 text-black">HOW WE DELIVER</h3>
+        <section className="max-w-7xl mx-auto px-4 py-6 md:py-8">
+          <h2 className="text-5xl md:text-8xl font-semibold mb-0 md:mb-4 text-[#C3272B]">3 WAYS</h2>
+          <h3 className="text-5xl md:text-8xl font-semibold mb-8 md:mb-10 text-black">HOW WE DELIVER</h3>
 
           <div className="md:space-y-0 space-y-8">
             {deliverData.map((item, index) => (
@@ -92,7 +92,7 @@ export default function Home() {
                   <Image
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full shadow-lg"
+                    className="w-full h-full"
                   />
                 </div>
 
@@ -112,19 +112,19 @@ export default function Home() {
 
 
         <section className="max-w-7xl mx-auto px-4 py-12">
-          <h2 className="text-4xl md:text-6xl font-semibold mb-4 text-[#C3272B]">WHERE IDEAS</h2>
-          <h3 className="text-4xl md:text-6xl font-semibold mb-10 text-black">MEET EXECUTION</h3>
+
+          <h2 className="text-5xl md:text-8xl font-semibold mb-0 md:mb-4 text-[#C3272B]">WHERE IDEAS</h2>
+          <h3 className="text-5xl md:text-8xl font-semibold mb-8 md:mb-10 text-black">MEET EXECUTION</h3>
 
           <Image src={step} alt="icons" className="py-0 md:py-16 w-full md:h-auto" />
 
-          <p className="text-center text-lg md:text-4xl mt-12 font-medium text-red-600">
+          <p className="text-center text-4xl md:text-5xl mt-12 mb-8 md:mb-10 font-medium text-[#C3272B]">
             Your Idea, Our Drive, Straight to Shelf!
           </p>
         </section>
         <ProductSlider />
         <BlogSection/>
-        <ContactForm/>
-        <LocationSection/>
+
       </main>
 
     </>

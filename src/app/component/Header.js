@@ -75,10 +75,10 @@ function Header() {
 
                         <div className="px-6 mt-10 space-y-6" id="links">
 
-                            <a href="#" onClick={handleLinkClick} className="block text-xl md:text-2xl font-medium text-white hover:text-[#F8AB1D]">Home</a>
-                            <a href="#" onClick={handleLinkClick} className="block text-xl md:text-2xl font-medium text-white hover:text-[#F8AB1D]">About</a>
-                            <a href="#" onClick={handleLinkClick} className="block text-xl md:text-2xl font-medium text-white hover:text-[#F8AB1D]">Services</a>
-                            <a href="#" onClick={handleLinkClick} className="block text-xl md:text-2xl font-medium text-white hover:text-[#F8AB1D]">Contact</a>
+                            <a href="/" onClick={handleLinkClick} className="block text-xl md:text-2xl font-medium text-white hover:text-[#F8AB1D]">Home</a>
+                            <a href="/products" onClick={handleLinkClick} className="block text-xl md:text-2xl font-medium text-white hover:text-[#F8AB1D]">Products</a>
+                            {/* <a href="#" onClick={handleLinkClick} className="block text-xl md:text-2xl font-medium text-white hover:text-[#F8AB1D]">Services</a>
+                            <a href="#" onClick={handleLinkClick} className="block text-xl md:text-2xl font-medium text-white hover:text-[#F8AB1D]">Contact</a> */}
                         </div>
                     </div>
                 </div>

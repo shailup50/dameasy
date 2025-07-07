@@ -16,32 +16,35 @@ export default function LocationSection() {
         <section className="bg-[#f7f7f7]">
 
             <div className="max-w-7xl mx-auto px-4 py-12 md:py-16 text-center">
-                <h2 className="text-[30px] md:text-5xl font-bold text-center text-black mb-10 md:mb-20">WHERE TO FIND US!</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                <h2 className="text-[30px] md:text-[50px] font-bold text-center text-black mb-10 md:mb-20">WHERE TO FIND US!</h2>
+                <div className="flex md:flex-nowrap justify-center flex-wrap gap-8 text-left">
 
-                    <div className="flex items-center md:items-start gap-8">
-                        <div className="shrink-0">
+                    <div className="w-full md:w-[40%]">
+
+                    <div className="flex items-center md:items-start gap-8 w-full">
+                        <div className="shrink-0 ">
                             <Image src={icon1} alt="Corporate Office" className="w-12 md:w-22" />
                         </div>
-                        <div className="md:w-[55%]">
-                            <h3 className="text-[#C3272B] font-bold text-xl md:text-[24px] mb-2">CORPORATE OFFICE</h3>
+                        <div className="md:w-[100%]">
+                            <h3 className="text-[#C3272B] font-bold text-xl md:text-[28px] mb-2">CORPORATE OFFICE</h3>
                             <p className="text-black md:text-xl font-medium">
                                 Office 409, 4th Floor, MGF Metropolis Mall, MG Road, Gurugram, Haryana-122002
                             </p>
                         </div>
                     </div>
-
-
-                    <div className="flex items-center md:items-start gap-8">
+                    </div>
+                    <div className="w-full md:w-[40%]">
+                    <div className="flex items-center md:items-start gap-8 w-full">
                         <div className="shrink-0">
                             <Image src={icon2} alt="Factory" className="w-12 md:w-22" />
                         </div>
-                        <div className="md:w-[55%]">
-                            <h3 className="text-[#C3272B] font-bold text-xl md:text-[24px] mb-2">FACTORY</h3>
+                        <div className="md:w-[100%]">
+                            <h3 className="text-[#C3272B] font-bold text-xl md:text-[28px] mb-2">FACTORY</h3>
                             <p className="text-black md:text-xl font-medium">
-                                1163/4, Block A, Sector 34,<br />Gurugram, Haryana-122002
+                                1163/4, Block A, Sector 34, Gurugram, Haryana-122002
                             </p>
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>
