@@ -11,7 +11,7 @@ import icon2 from "../../asserts/images/info/icon2.svg"
 import icon3 from "../../asserts/images/info/icon3.svg"
 import rocket from "../../asserts/images/info/rocket.svg"
 
-import product1 from "../../asserts/images/home/Apple-Cider-Vinegar1.webp"
+import product1 from "../../asserts/images/home/apple-cider-vinegar1.webp"
 import product2 from "../../asserts/images/home/blueberry-jam.webp"
 import product3 from "../../asserts/images/home/ginger-garlic-paste.webp"
 import product4 from "../../asserts/images/home/honey-mustard-sachet.webp"
