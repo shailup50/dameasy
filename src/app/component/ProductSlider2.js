@@ -9,6 +9,8 @@ import { useState, useId, useEffect } from "react";
 import Image from "next/image";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
+import { FaCircleArrowLeft } from "react-icons/fa6";
+
 
 
 
@@ -19,6 +21,7 @@ import Link from "next/link";
 
 export default function ProductSlider({ products, sliderId }) {
     const [activeIndex, setActiveIndex] = useState(0);
+    const [flippedIndex, setFlippedIndex] = useState(null);
 
     const uniqueId = useId(); // generate a unique ID (or use sliderId from props)
 
@@ -28,7 +31,7 @@ export default function ProductSlider({ products, sliderId }) {
     const [isClient, setIsClient] = useState(false);
 
     useEffect(() => {
-      setIsClient(true);
+        setIsClient(true);
     }, []);
 
     if (!isClient) return null;
@@ -77,9 +80,7 @@ export default function ProductSlider({ products, sliderId }) {
                                             }`}
                                     >
                                         <div
-                                            className={`relative w-full h-full transform-style preserve-3d transition-transform duration-700 ${isActive
-                                                ? "group-hover:rotate-y-180"
-                                                : ""
+                                            className={`relative w-full h-full transform-style preserve-3d transition-transform duration-700 ${isActive && flippedIndex === index ? "rotate-y-180" : ""
                                                 }`}
                                         >
                                             {/* Front Side */}
@@ -91,27 +92,36 @@ export default function ProductSlider({ products, sliderId }) {
                                                     className="object-cover !relative !rounded-xl"
                                                 />
                                                 <div className="absolute bottom-0 bg-white w-full text-center py-4 px-3 front_side">
-                                                    <h3 className="text-[18px] font-semibold text-[#000] mb-1">
+                                                    <h3 className="text-[18px] font-semibold text-[#000] mb-1 leading-8">
                                                         {item.title}
                                                     </h3>
-                                                    <p className="text-sm font-medium text-[#C3272B] mb-4">
+                                                    <p className="text-[15px] font-medium text-[#C3272B] mb-4">
                                                         {item.shortDesc}
                                                     </p>
-                                                    <Link
-                                                        href="/info"
+                                                    <button
+                                                        onClick={() => setFlippedIndex(isActive ? index : null)}
                                                         className="bg-black rounded text-white px-4 py-2 text-xs uppercase font-bold"
                                                     >
                                                         Know More
-                                                    </Link>
+                                                    </button>
                                                 </div>
                                             </div>
 
                                             {/* Back Side */}
-                                            <div className="absolute w-full h-full backface-hidden bg-white text-black rounded-xl shadow-lg rotate-y-180 p-6 flex flex-col justify-center items-center back_side">
-                                                <h3 className="text-[22px] font-bold text-[#C3272B] mb-3">{item.title}</h3>
-                                                <p className="text-sm text-center text-[#C3272B] mb-4"
-                                                 dangerouslySetInnerHTML={{__html: item.longDesc}}
+                                            <div className="absolute w-full h-full backface-hidden bg-white text-black rounded-xl shadow-lg rotate-y-180 p-6 pt-12 flex flex-col justify-center items-center back_side">
+                                            <button
+                                                    onClick={() => setFlippedIndex(null)}
+                                                    className="rounded text-black px-4 py-2 text-2xl uppercase font-bold absolute top-4 left-4"
+                                                >
+                                                   <FaCircleArrowLeft />
+
+                                                </button>
+
+                                                <h3 className="text-[26px] font-bold text-[#C3272B] mb-3">{item.title}</h3>
+                                                <p className="text-base font-medium text-center text-[#C3272B] mb-4"
+                                                    dangerouslySetInnerHTML={{ __html: item.longDesc }}
                                                 />
+
 
 
                                                 {/* <Link

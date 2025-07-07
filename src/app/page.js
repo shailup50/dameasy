@@ -4,7 +4,7 @@ import logo from "./../asserts/images/logo.png"
 import banner from "../asserts/images/banner.webp"
 import Marquee from "./component/Marquee";
 import WeAre from "./component/WeAre";
-import aboutimg from "../asserts/images/home/about.webp"
+import aboutimg from "../asserts/images/home/img1.webp"
 import img1 from "../asserts/images/home/image1.webp"
 import img2 from "../asserts/images/home/image2.webp"
 import img3 from "../asserts/images/home/image3.webp"
@@ -78,8 +78,8 @@ export default function Home() {
         <WeAre title={about.title} subtitle={about.subtitle} description={about.description} img={about.img} />
 
         <section className="max-w-7xl mx-auto px-4 py-6 md:py-8">
-          <h2 className="text-5xl md:text-8xl font-semibold mb-0 md:mb-4 text-[#C3272B]">3 WAYS</h2>
-          <h3 className="text-5xl md:text-8xl font-semibold mb-8 md:mb-10 text-black">HOW WE DELIVER</h3>
+          <h2 className="text-5xl md:text-[80px] font-semibold mb-0 md:mb-4 text-[#C3272B]">3 WAYS</h2>
+          <h3 className="text-5xl md:text-[80px] font-semibold mb-8 md:mb-10 text-black">HOW WE DELIVER</h3>
 
           <div className="md:space-y-0 space-y-8">
             {deliverData.map((item, index) => (
@@ -113,8 +113,8 @@ export default function Home() {
 
         <section className="max-w-7xl mx-auto px-4 py-12">
 
-          <h2 className="text-5xl md:text-8xl font-semibold mb-0 md:mb-4 text-[#C3272B]">WHERE IDEAS</h2>
-          <h3 className="text-5xl md:text-8xl font-semibold mb-8 md:mb-10 text-black">MEET EXECUTION</h3>
+          <h2 className="text-5xl md:text-[80px] font-semibold mb-0 md:mb-4 text-[#C3272B]">WHERE IDEAS</h2>
+          <h3 className="text-5xl md:text-[80px] font-semibold mb-8 md:mb-10 text-black">MEET EXECUTION</h3>
 
           <Image src={step} alt="icons" className="py-0 md:py-16 w-full md:h-auto" />
 

@@ -160,10 +160,10 @@ export default function Category() {
                                             className="object-cover f-full w-full !relative"
                                         />
                                         <div className="bottom-0 bg-white w-full text-center py-4 px-3 pb-8 content_slide">
-                                            <h3 className="text-[22px] md:text-[26px] font-bold text-[#C3272B] mb-1">
+                                            <h3 className="text-[22px] md:text-[26px] font-bold text-[#C3272B] mb-1 leading-8">
                                                 {item.title}
                                             </h3>
-                                            <p className="text-sm font-medium text-[#C3272B] mb-6">
+                                            <p className="text-[15px] font-medium text-[#C3272B] mb-6">
                                                 {item.shortDesc}
                                             </p>
 

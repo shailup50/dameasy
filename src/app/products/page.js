@@ -4,7 +4,7 @@ import Banner from '../component/Banner'
 import Marquee from '../component/Marquee'
 import banner from "../../asserts/images/info/banner2.webp"
 import logo from ".././../asserts/images/logo.png"
-import aboutimg from "../../asserts/images/home/about.webp"
+import aboutimg from "../../asserts/images/info/team.webp"
 import ProductSlider from '../component/ProductSlider2'
 import icon1 from "../../asserts/images/info/icon1.svg"
 import icon2 from "../../asserts/images/info/icon2.svg"
@@ -337,18 +337,23 @@ function page() {
             <section className="py-16 px-4 bg-white">
                 <div className="max-w-7xl mx-auto">
 
-                    <h2 className='text-5xl md:text-8xl font-semibold mb-0 md:mb-4 text-[#C3272B]'>CHOOSE A PRODUCT</h2>
-                    <h3 className='text-5xl md:text-8xl font-semibold mb-10 md:mb-16 text-black'>FROM OUR RANGE!</h3>
+                    <h2 className='text-5xl md:text-[80px] font-semibold mb-0 md:mb-4 text-[#C3272B]'>CHOOSE A PRODUCT</h2>
+                    <h3 className='text-5xl md:text-[80px] font-semibold mb-10 md:mb-16 text-black'>FROM OUR RANGE!</h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10 card_group">
                         {features.map((item, index) => (
                             <div
                                 key={index}
-                                className="bg-[#C3272B] text-white text-left p-6 md:p-10 rounded-lg   transition-transform hover:scale-105 shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]"
+                                className="bg-[#C3272B] text-white text-left py-10 p-6 md:p-10 rounded-lg   transition-transform   md:block flex gap-5 items-center hover:scale-105 shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]"
 
                             >
-                                <Image src={item.icon} alt={item.title} className='w-16 mb-6' />
-                                <h3 className="text-xl md:text-2xl font-semibold mb-2">{item.title}</h3>
-                                <p className="text-base md:text-xl font-medium">{item.desc}</p>
+                                <div className='h-auto'>
+
+                                <Image src={item.icon} alt={item.title} className='w-18 mb-0 md:mb-6' />
+                                </div>
+                                <div>
+                                <h3 className="text-[22px] md:text-2xl font-semibold mb-2">{item.title}</h3>
+                                <p className="text-[18px] md:text-xl font-medium">{item.desc}</p>
+                                </div>
                             </div>
                         ))}
                     </div>
@@ -363,28 +368,28 @@ function page() {
                     backgroundImage: 'radial-gradient(circle, #FD6100 0%, #B40E13 100%)'
                 }}>
                 <div className="max-w-7xl mx-auto">
-                    <h2 className='text-5xl md:text-[90px] font-semibold mb-0 md:mb-4 text-[#fff]'>OUR VERSATILE FOOD</h2>
-                    <h3 className='text-5xl md:text-[90px] font-semibold mb-6 md:mb-8 text-black'>CATEGORY RANGE</h3>
+                    <h2 className='text-5xl md:text-[80px] font-semibold mb-0 md:mb-4 text-[#fff]'>OUR VERSATILE FOOD</h2>
+                    <h3 className='text-5xl md:text-[80px] font-semibold mb-6 md:mb-8 text-black'>CATEGORY RANGE</h3>
                 </div>
 
 
                 <ProductSlider products={categories} sliderId="slider1" />
                 <ProductSlider products={category2} sliderId="slider2" />
-                <div className="  pt-8 flex justify-center">
+                {/* <div className="  pt-8 flex justify-center">
                     <Link href="#" className="flex items-center rounded-xl overflow-hidden shadow-md text-black font-bold text-sm md:text-base ">
-                        <span className="bg-white px-10  py-4 flex items-center h-full">DOWNLOAD CATALOGUE</span>
+                        <span className="bg-white px-6 md:px-10  py-4 flex items-center h-full">DOWNLOAD CATALOGUE</span>
                         <span className="bg-[#F8AB1D]  px-8 py-4 grid place-content-center text-2xl h-full">
-                            <Image className='h-8' src={download} alt='download icon' />
+                            <Image className='h-6 md:h-8' src={download} alt='download icon' />
                         </span>
                     </Link>
-                </div>
+                </div> */}
             </section>
 
             <section className="py-12 md:py-20 px-4 text-white bg-[#F5F5F5]"
             >
                 <div className="max-w-7xl mx-auto">
-                    <h2 className='text-5xl md:text-8xl font-semibold mb-0 md:mb-4 text-[#C3272B]'>DAMEASY OFFERS</h2>
-                    <h3 className='text-5xl md:text-8xl font-semibold mb-10 md:mb-16 text-black'>A RANGE OF PACKAGING  SOLUTIONS!</h3>
+                    <h2 className='text-5xl md:text-[80px] font-semibold mb-0 md:mb-4 text-[#C3272B]'>DAMEASY OFFERS</h2>
+                    <h3 className='text-5xl md:text-[80px] font-semibold mb-10 md:mb-16 text-black'>A RANGE OF PACKAGING  SOLUTIONS!</h3>
                     <div className='mt-10 text-[#2E2E2E]'>
                         <ul className='text-left space-y-4'>
                             {points.map((item, index) => (

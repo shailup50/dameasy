@@ -27,11 +27,23 @@ function Header() {
 
     const handleLinkClick = () => setIsOpen(false);
 
+    const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 100);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+
     return (
         <>
             <div className='container px-4 py-2 text-center bg-[#C3272B] text-white font-medium'>SHOP COMING SOON</div>
 
-            <div className=" relative overflow-hidden">
+            <div className={`relative overflow-hidden ${isScrolled ? "custom_header" : ""}`}>
                 <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-2 relative z-10">
                     <div className="flex pt-4 justify-between gap-4 items-center">
                         <button
@@ -42,7 +54,14 @@ function Header() {
                                 <FiMenu size={40} className="cursor-pointer" />
                             </div>
                         </button>
-
+                        <Link href="/">
+                        <Image
+                        className="sticky_logo"
+                                src={logo}
+                                alt="Logo"
+                                width="150"
+                            />
+                            </Link>
                         <div className="bg-[#C3272B] px-6 md:px-8 py-2 md:py-3 rounded-3xl">
                             <Image src={message} alt="Message" />
                         </div>
