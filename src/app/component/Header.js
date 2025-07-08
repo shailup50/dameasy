@@ -32,24 +32,17 @@ function Header() {
 
     const handleLinkClick = () => setIsOpen(false);
 
-    const [isScrolled, setIsScrolled] = useState(false);
+    const headerRef = useRef(null);
 
-useEffect(() => {
-    const handleScroll = () => {
-        const scrollY = window.scrollY;
+    useEffect(() => {
+      const handleScroll = () => {
+        headerRef.current?.classList.toggle('custom_header', window.scrollY > 80);
+      };
 
-        setIsScrolled((prev) => {
-            const shouldBeScrolled = scrollY >= 80;
-            return prev !== shouldBeScrolled ? shouldBeScrolled : prev;
-        });
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    handleScroll();
-
-    return () => window.removeEventListener("scroll", handleScroll);
-}, []);
+      handleScroll(); // Initial check
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const pathname = usePathname();
 
@@ -57,7 +50,7 @@ useEffect(() => {
         <>
             {/* <div className='container px-4 py-2 text-center bg-[#C3272B] text-white font-medium'>SHOP COMING SOON</div> */}
 
-            <header className={`relative overflow-hidden transition-all duration-100  ${isScrolled     ? "custom_header" : ""}`}>
+            <header ref={headerRef} className={`relative overflow-hidden transition-all duration-100   `}>
                 <div className="mx-auto max-w-8xl px-4 md:px-6 lg:px-8 relative z-10">
                     <div className="flex md:py-2 justify-between gap-4 items-start">
                         <button
@@ -70,9 +63,7 @@ useEffect(() => {
                         </button>
                         <Link href="/" className="self-baseline">
                             <Image
-                                className={`sticky_logo  pointer-events-all transform duration-100
-                                ${isScrolled     ? "custom_header scale-[0.8]" : "scale-[1] "}`}
-
+                                className={`sticky_logo`}
                                 src={logo}
                                 alt="Logo"
 
