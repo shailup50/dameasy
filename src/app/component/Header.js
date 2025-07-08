@@ -35,21 +35,41 @@ function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
 
 useEffect(() => {
+    const SCROLL_UPPER_LIMIT = 289; // When to trigger "scrolled"
+    const SCROLL_LOWER_LIMIT = 80; // When to remove "scrolled"
+
+    // Set initial state once, with buffer considered
+    const initialScrollY = Math.floor(window.scrollY);
+    setIsScrolled(initialScrollY >= SCROLL_UPPER_LIMIT);
+
     const handleScroll = () => {
-        const scrollY = window.scrollY;
+        const scrollY = Math.floor(window.scrollY);
+        console.log("scrollY:", scrollY);
 
         setIsScrolled((prev) => {
-            const shouldBeScrolled = scrollY >= 80;
-            return prev !== shouldBeScrolled ? shouldBeScrolled : prev;
+            const newState =
+                (!prev && scrollY >= SCROLL_UPPER_LIMIT)
+                    ? true
+                    : (prev && scrollY <= SCROLL_LOWER_LIMIT)
+                    ? false
+                    : prev;
+
+            if (prev !== newState) {
+                console.log("isScrolled changed:", newState);
+            }
+
+            return newState;
         });
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
 
+    // Trigger once on mount
     handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
 }, []);
+
 
     const pathname = usePathname();
 
