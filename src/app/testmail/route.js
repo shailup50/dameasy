@@ -19,7 +19,7 @@ export async function POST(req) {
     const result = await resend.emails.send({
       from: 'info@dameasy.in',
       to: 'info@dameasy.in', // sender & receiver both same
-      cc: ['zubinchadha@gmail.com'], // 🔁 add CC addresses here
+      cc: ['dameasy.info@gmail.com'], // 🔁 add CC addresses here
       subject: `📩 New Contact Form Submission from ${fullName}`,
       html: `
         <h3>New Contact Request</h3>
