@@ -4,6 +4,9 @@ import { useEffect, useRef, useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import message from "../../asserts/images/email.svg"
 import logo from "../../asserts/images/logo.png"
+import arrow from "../../asserts/images/arrow-right.svg"
+
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
@@ -73,18 +76,12 @@ function Header() {
 
                             {pathname === "/" && (
                                 <Link href="/products" title="Go to Products" className="bg-[#C3272B]  px-3 md:px-8 py-2 md:py-3 rounded-3xl   ">
-                                    <FaChevronRight
-
-                                        className="text-white  cursor-pointer"
-                                    />
+                                     <Image src={arrow} alt="icon" className="arrow_icon h-5 w-auto" />
                                 </Link>
                             )}
                             {pathname === "/products" && (
                                 <Link href="/" title="Back to Home" className="bg-[#C3272B]  px-4 md:px-8 py-2 md:py-3 rounded-3xl   ">
-                                    <FaChevronLeft
-
-                                        className="text-white  cursor-pointer"
-                                    />
+                                  <Image src={arrow} alt="icon" className="arrow_icon h-5 w-auto rotate-180" />
                                 </Link>
                             )}
                         </div>
@@ -118,19 +115,13 @@ function Header() {
 
                         <div className="px-6 mt-10 space-y-6" id="links">
                         {pathname === "/" && (
-                                <Link href="/products" title="Go to Products" className="bg-[#C3272B]  px-8 py-3  rounded-full inline-block md:hidden ">
-                                    <FaChevronRight
-
-                                        className="text-white  cursor-pointer"
-                                    />
+                                <Link href="/products" title="Go to Products" onClick={handleLinkClick} className="bg-[#C3272B]  px-8 py-3  rounded-full inline-block md:hidden ">
+                                   <Image src={arrow} alt="icon" className="arrow_icon h-5 w-auto" />
                                 </Link>
                             )}
                             {pathname === "/products" && (
-                                <Link href="/" title="Back to Home" className="bg-[#C3272B]  px-8 py-3 rounded-full   inline-block md:hidden">
-                                    <FaChevronLeft
-
-                                        className="text-white  cursor-pointer"
-                                    />
+                                <Link href="/" title="Back to Home" onClick={handleLinkClick} className="bg-[#C3272B]  px-8 py-3 rounded-full   inline-block md:hidden">
+                                    <Image src={arrow} alt="icon" className="arrow_icon h-5 w-auto rotate-180" />
                                 </Link>
                             )}
                             <Link href="/" onClick={handleLinkClick} className="block text-xl md:text-2xl font-medium text-white hover:text-[#F8AB1D]">Home</Link>
