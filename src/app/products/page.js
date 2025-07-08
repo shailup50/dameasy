@@ -337,8 +337,8 @@ function page() {
             <section className="pt-16 lg:pt-24  bg-white">
                 <div className="max-w-7xl mx-auto px-4">
 
-                    <h2 className='text-5xl md:text-[80px] font-medium apply-font mb-0 md:mb-4 text-[#C3272B]'>CHOOSE A PRODUCT</h2>
-                    <h3 className='text-5xl md:text-[80px] font-medium apply-font mb-10 md:mb-16 text-black'>FROM OUR RANGE!</h3>
+                    <h2 className='text-[35px] md:text-[80px] font-medium apply-font mb-0 md:mb-4 text-[#C3272B]'>CHOOSE A PRODUCT</h2>
+                    <h3 className='text-4xl md:text-[80px] font-medium apply-font mb-10 md:mb-16 text-black'>FROM OUR RANGE!</h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10 card_group">
                         {features.map((item, index) => (
                             <div
@@ -351,15 +351,15 @@ function page() {
                                 <Image src={item.icon} alt={item.title} className='w-18 mb-0 md:mb-6 mx-auto' />
                                 </div>
                                 <div className='w-full'>
-                                <h3 className="text-[26px] md:text-3xl font-semibold  mb-2">{item.title}</h3>
+                                <h3 className="text-[26px] md:text-3xl font-semibold mb:0  md:mb-2">{item.title}</h3>
                                 <p className="text-[22px] md:text-2xl font-medium">{item.desc}</p>
                                 </div>
                             </div>
                         ))}
                     </div>
 
-                    <h2 className="text-[#C3272B]  font-medium apply-font text-[22px] md:text-5xl mt-10 md:mt-16">
-                        WITH DAMEASY TEAM, ANYTHING IS POSSIBLE!
+                    <h2 className="text-[#C3272B]  font-medium apply-font text-2xl md:text-5xl mt-10 md:mt-16">
+                        WITH THE DAMEASY TEAM, ANYTHING IS POSSIBLE!
                     </h2>
                 </div>
             </section>
@@ -368,8 +368,8 @@ function page() {
                     backgroundImage: 'radial-gradient(circle, #FD6100 0%, #B40E13 100%)'
                 }}>
                 <div className="max-w-7xl mx-auto">
-                    <h2 className='text-5xl md:text-[80px] font-medium apply-font mb-0 md:mb-4 text-[#fff]'>OUR VERSATILE FOOD</h2>
-                    <h3 className='text-5xl md:text-[80px] font-medium apply-font mb-6 md:mb-8 text-black'>CATEGORY RANGE</h3>
+                    <h2 className='text-4xl md:text-[80px] font-medium apply-font mb-0 md:mb-4 text-[#fff]'>OUR VERSATILE FOOD</h2>
+                    <h3 className='text-4xl md:text-[80px] font-medium apply-font mb-6 md:mb-8 text-black'>CATEGORY RANGE</h3>
                 </div>
 
 
@@ -388,8 +388,8 @@ function page() {
             <section className="pt-16 md:pt-24  text-white bg-[#F5F5F5]"
             >
                 <div className="max-w-7xl mx-auto px-4" >
-                    <h2 className='text-5xl md:text-[80px] font-medium apply-font mb-0 md:mb-4 text-[#C3272B]'>DAMEASY OFFERS</h2>
-                    <h3 className='text-5xl md:text-[65px] font-medium apply-font mb-10 md:mb-16 text-black'>A RANGE OF PACKAGING  SOLUTIONS!</h3>
+                    <h2 className='text-4xl md:text-[80px] font-medium apply-font mb-0 md:mb-4 text-[#C3272B]'>DAMEASY OFFERS</h2>
+                    <h3 className='text-[28px]  md:text-[65px] font-medium apply-font mb-10 md:mb-16 text-black'>A RANGE OF PACKAGING  SOLUTIONS!</h3>
                     <div className='mt-10 text-[#2E2E2E]'>
                         <ul className='text-left space-y-4'>
                             {points.map((item, index) => (

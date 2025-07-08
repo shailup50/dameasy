@@ -34,21 +34,32 @@ function Header() {
 
     const [isScrolled, setIsScrolled] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 20);
-        };
+useEffect(() => {
+    const handleScroll = () => {
+        const scrollY = window.scrollY;
 
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+        // Only update state if value actually changes
+        setIsScrolled((prev) => {
+            const shouldBeScrolled = scrollY >= 80;
+            return prev !== shouldBeScrolled ? shouldBeScrolled : prev;
+        });
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    // Initial check in case the user has already scrolled
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
     const pathname = usePathname();
 
     return (
         <>
             {/* <div className='container px-4 py-2 text-center bg-[#C3272B] text-white font-medium'>SHOP COMING SOON</div> */}
 
-            <header className={`relative overflow-hidden  ${isScrolled ? "custom_header" : ""}`}>
+            <header className={`relative overflow-hidden transition-all duration-300  ${isScrolled     ? "custom_header" : ""}`}>
                 <div className="mx-auto max-w-8xl px-4 md:px-6 lg:px-8 relative z-10">
                     <div className="flex md:py-2 justify-between gap-4 items-start">
                         <button
@@ -62,13 +73,14 @@ function Header() {
                         <Link href="/" className="self-baseline">
                             <Image
                                 className={`sticky_logo  pointer-events-all transform duration-[400ms]   ease-in-out
-                                ${isScrolled ? "custom_header scale-[0.8]" : "scale-[1] translate-y-[0] 800:scale-[1] "}`}
+                                ${isScrolled     ? "custom_header scale-[0.8]" : "scale-[1] translate-y-[0] 800:scale-[1] "}`}
 
                                 src={logo}
                                 alt="Logo"
 
                             />
                         </Link>
+
                         <div className="md:flex gap-2 md:gap-4 items-center hidden">
                             <div className="bg-[#C3272B] px-4 md:px-8 py-2 md:py-3 rounded-3xl">
                                 <Image src={message} alt="Message" className="md:h-auto h-4 md:w-6 md:min-w-auto min-w-12 " />
@@ -76,12 +88,12 @@ function Header() {
 
                             {pathname === "/" && (
                                 <Link href="/products" title="Go to Products" className="bg-[#C3272B]  px-3 md:px-8 py-2 md:py-3 rounded-3xl   ">
-                                     <Image src={arrow} alt="icon" className="arrow_icon h-5 w-auto" />
+                                    <Image src={arrow} alt="icon" className="arrow_icon h-5 w-auto" />
                                 </Link>
                             )}
                             {pathname === "/products" && (
                                 <Link href="/" title="Back to Home" className="bg-[#C3272B]  px-4 md:px-8 py-2 md:py-3 rounded-3xl   ">
-                                  <Image src={arrow} alt="icon" className="arrow_icon h-5 w-auto rotate-180" />
+                                    <Image src={arrow} alt="icon" className="arrow_icon h-5 w-auto rotate-180" />
                                 </Link>
                             )}
                         </div>
@@ -118,23 +130,23 @@ function Header() {
                             <Link href="/" onClick={handleLinkClick} className="block text-xl md:text-2xl font-medium text-white hover:text-[#F8AB1D]">Home</Link>
                             <Link href="/products" onClick={handleLinkClick} className="block text-xl md:text-2xl font-medium text-white hover:text-[#F8AB1D]">Products</Link>
                             <div className="flex gap-2 md:gap-4 items-center">
-                            <div className="bg-[#C3272B] px-4 md:px-8 py-2 md:py-3 rounded-3xl">
-                                <Image src={message} alt="Message" className="md:h-auto h-4 md:w-6 md:min-w-auto min-w-12 " />
-                            </div>
+                                <div className="bg-[#C3272B] px-4 md:px-8 py-2 md:py-3 rounded-3xl">
+                                    <Image src={message} alt="Message" className="md:h-auto h-4 md:w-6 md:min-w-auto min-w-12 " />
+                                </div>
 
-                        </div>
-                        <div className="w-full">
-                            {pathname === "/" && (
-                                <Link href="/products" title="Go to Products" onClick={handleLinkClick} className="bg-[#C3272B]  px-8 py-3  rounded-full inline-block md:hidden ">
-                                   <Image src={arrow} alt="icon" className="arrow_icon h-5 w-auto" />
-                                </Link>
-                            )}
-                            {pathname === "/products" && (
-                                <Link href="/" title="Back to Home" onClick={handleLinkClick} className="bg-[#C3272B]  px-8 py-3 rounded-full   inline-block md:hidden">
-                                    <Image src={arrow} alt="icon" className="arrow_icon h-5 w-auto rotate-180" />
-                                </Link>
-                            )}
-</div>
+                            </div>
+                            <div className="w-full">
+                                {pathname === "/" && (
+                                    <Link href="/products" title="Go to Products" onClick={handleLinkClick} className="bg-[#C3272B]  px-8 py-3  rounded-full inline-block md:hidden ">
+                                        <Image src={arrow} alt="icon" className="arrow_icon h-5 w-auto" />
+                                    </Link>
+                                )}
+                                {pathname === "/products" && (
+                                    <Link href="/" title="Back to Home" onClick={handleLinkClick} className="bg-[#C3272B]  px-8 py-3 rounded-full   inline-block md:hidden">
+                                        <Image src={arrow} alt="icon" className="arrow_icon h-5 w-auto rotate-180" />
+                                    </Link>
+                                )}
+                            </div>
 
                             {/* <a href="#" onClick={handleLinkClick} className="block text-xl md:text-2xl font-medium text-white hover:text-[#F8AB1D]">Services</a>
                             <a href="#" onClick={handleLinkClick} className="block text-xl md:text-2xl font-medium text-white hover:text-[#F8AB1D]">Contact</a> */}

@@ -15,7 +15,7 @@ function WeAre({ title, subtitle, description, img }) {
                         <div className='w-full md:w-3/5'>
                             <div className='p-6 md:p-10 py-10 md:py-14'>
                                 <h2 className='text-[50px] md:text-7xl text-[#C3272B] font2 text-center font-medium mb-0 md:mb-5'>{title}</h2>
-                                <h3 className='text-2xl mb-5 md:text-[24px] font-semibold'>{subtitle}</h3>
+                                <h3 className='text-[20px] mb-5 md:text-[24px] font-semibold'>{subtitle}</h3>
                                 <p className='text-[17px] md:text-lg font-medium'>{description}</p>
                                 <div className='mt-8 text-center'>
                                     <Link
