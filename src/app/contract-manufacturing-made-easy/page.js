@@ -368,8 +368,8 @@ function page() {
                     backgroundImage: 'radial-gradient(circle, #FD6100 0%, #B40E13 100%)'
                 }}>
                 <div className="max-w-7xl mx-auto">
-                    <h2 className='text-4xl md:text-[80px] font-medium apply-font mb-0 md:mb-4 text-[#fff]'>OUR VERSATILE FOOD</h2>
-                    <h3 className='text-4xl md:text-[80px] font-medium apply-font mb-6 md:mb-8 text-black'>CATEGORY RANGE</h3>
+                    <h2 className='text-[30px] md:text-[80px] font-medium apply-font mb-0 md:mb-4 text-[#fff]'>OUR VERSATILE FOOD</h2>
+                    <h3 className='text-[30px] md:text-[80px] font-medium apply-font mb-6 md:mb-8 text-black'>CATEGORY RANGE</h3>
                 </div>
 
 
