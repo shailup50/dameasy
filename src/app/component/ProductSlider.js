@@ -135,7 +135,7 @@ export default function ProductSlider() {
                                             </p>
 
                                             <Link
-                                        href="/products"
+                                        href="/contract-manufacturing-made-easy"
                                         className="relative inline-flex items-center gap-2 overflow-hidden rounded bg-black  text-white group px-4 py-2 text-xs"
                                     >
                                         <span className="relative z-10 uppercase font-light font-btn">  Know More</span>
@@ -146,7 +146,7 @@ export default function ProductSlider() {
                                     </Link>
 
 {/*
-                                            <Link href="/products" className="bg-black rounded text-white px-4 py-2 text-xs uppercase font-light font-btn">
+                                            <Link href="/contract-manufacturing-made-easy" className="bg-black rounded text-white px-4 py-2 text-xs uppercase font-light font-btn">
                                                 Know More
                                             </Link> */}
                                         </div>

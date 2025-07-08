@@ -14,12 +14,12 @@ function WeAre({ title, subtitle, description, img }) {
                         </div>
                         <div className='w-full md:w-3/5'>
                             <div className='p-6 md:p-10 py-10 md:py-14'>
-                                <h2 className='text-[55px] md:text-7xl text-[#C3272B] font2 text-center font-medium mb-0 md:mb-5'>{title}</h2>
+                                <h2 className='text-[55px] max-[370px]:text-[50px] md:text-7xl text-[#C3272B] font2 text-center font-medium mb-0 md:mb-5'>{title}</h2>
                                 <h3 className='text-[20px] mb-5 md:text-[24px] font-semibold'>{subtitle}</h3>
                                 <p className='text-[17px] md:text-lg font-medium'>{description}</p>
                                 <div className='mt-8 text-center'>
                                     <Link
-                                        href="/products"
+                                        href="/contract-manufacturing-made-easy"
                                         className="relative inline-flex items-center gap-2 overflow-hidden rounded-4xl bg-black py-4 px-6 text-white group "
                                     >
                                         <span className="relative z-10 font-medium">Explore Our Product Range</span>

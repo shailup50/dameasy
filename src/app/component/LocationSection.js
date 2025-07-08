@@ -54,11 +54,11 @@ export default function LocationSection() {
                 <div className="max-w-7xl mx-auto flex flex-row md:flex-row justify-center items-end md:items-center gap-4 text-black font-bold text-sm">
 
                     <div className="flex items-center gap-4 md:gap-6 flex-wrap justify-center md:w-auto w-[80%]">
-                        <p className="text-sm md:text-xl md:w-auto w-full text-center">OUR SOCIAL PRESENCE</p>
-                        <FaFacebook  className="text-3xl md:text-3xl hover:text-[#C3272B]  cursor-pointer" />
-                        <FaTwitter className="text-3xl md:text-3xl hover:text-[#C3272B]  cursor-pointer" />
-                        <FaLinkedinIn className="text-3xl md:text-3xl hover:text-[#C3272B]  cursor-pointer" />
-                        <FaInstagram className="text-3xl md:text-3xl hover:text-[#C3272B]  cursor-pointer" />
+                        <p className="text-sm max-[370px]:text-[13px] md:text-xl md:w-auto w-full text-center">OUR SOCIAL PRESENCE</p>
+                        <FaFacebook  className="text-3xl max-[370px]:text-2xl md:text-3xl hover:text-[#C3272B]  cursor-pointer" />
+                        <FaTwitter className="text-3xl max-[370px]:text-2xl md:text-3xl hover:text-[#C3272B]  cursor-pointer" />
+                        <FaLinkedinIn className="text-3xl max-[370px]:text-2xl md:text-3xl hover:text-[#C3272B]  cursor-pointer" />
+                        <FaInstagram className="text-3xl max-[370px]:text-2xl md:text-3xl hover:text-[#C3272B]  cursor-pointer" />
 
                     </div>
 
@@ -67,8 +67,8 @@ export default function LocationSection() {
 
 
                     <div className=" flex items-center gap-4 md:gap-6 flex-wrap justify-center md:flex-nowrap mt-4 md:mt-0">
-                    <p className="text-sm md:text-xl w-full text-center">WHATSAPP US</p>
-                        <Image src={whatsapp} alt="whatsapp"  className="h-[30px] md:h-10  cursor-pointer" />
+                    <p className="text-sm  max-[370px]:text-[13px] md:text-xl w-full text-center">WHATSAPP US</p>
+                        <Image src={whatsapp} alt="whatsapp"  className="h-[30px] md:h-10 max-[370px]:h-[28px]  cursor-pointer" />
                     </div>
                 </div>
             </div>

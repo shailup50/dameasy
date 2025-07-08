@@ -105,11 +105,11 @@ useEffect(() => {
                             </div>
 
                             {pathname === "/" && (
-                                <Link href="/products" title="Go to Products" className="bg-[#C3272B]  px-3 md:px-8 py-2 md:py-3 rounded-3xl   ">
+                                <Link href="/contract-manufacturing-made-easy" title="Go to Products" className="bg-[#C3272B]  px-3 md:px-8 py-2 md:py-3 rounded-3xl   ">
                                     <Image src={arrow} alt="icon" className="arrow_icon h-5 w-auto" />
                                 </Link>
                             )}
-                            {pathname === "/products" && (
+                            {pathname === "/contract-manufacturing-made-easy" && (
                                 <Link href="/" title="Back to Home" className="bg-[#C3272B]  px-4 md:px-8 py-2 md:py-3 rounded-3xl   ">
                                     <Image src={arrow} alt="icon" className="arrow_icon h-5 w-auto rotate-180" />
                                 </Link>
@@ -146,20 +146,20 @@ useEffect(() => {
                         <div className="px-6 mt-10 space-y-6" id="links">
 
                             <Link href="/" onClick={handleLinkClick} className="block text-xl md:text-2xl font-medium text-white hover:text-[#F8AB1D]">Home</Link>
-                            <Link href="/products" onClick={handleLinkClick} className="block text-xl md:text-2xl font-medium text-white hover:text-[#F8AB1D]">Products</Link>
-                            <div className="flex gap-2 md:gap-4 items-center md:hidden">
+                            <Link href="/contract-manufacturing-made-easy" onClick={handleLinkClick} className="block text-xl md:text-2xl font-medium text-white hover:text-[#F8AB1D]">Products</Link>
+                            {/* <div className="flex gap-2 md:gap-4 items-center md:hidden">
                                 <div className="bg-[#C3272B] px-4 md:px-8 py-2 md:py-3 rounded-3xl">
                                     <Image src={message} alt="Message" className="md:h-auto h-4 md:w-6 md:min-w-auto min-w-12 " />
                                 </div>
 
-                            </div>
+                            </div> */}
                             <div className="w-full">
                                 {pathname === "/" && (
-                                    <Link href="/products" title="Go to Products" onClick={handleLinkClick} className="bg-[#C3272B]  px-8 py-3  rounded-full inline-block md:hidden ">
+                                    <Link href="/contract-manufacturing-made-easy" title="Go to Products" onClick={handleLinkClick} className="bg-[#C3272B]  px-8 py-3  rounded-full inline-block md:hidden ">
                                         <Image src={arrow} alt="icon" className="arrow_icon h-5 w-auto" />
                                     </Link>
                                 )}
-                                {pathname === "/products" && (
+                                {pathname === "/contract-manufacturing-made-easy" && (
                                     <Link href="/" title="Back to Home" onClick={handleLinkClick} className="bg-[#C3272B]  px-8 py-3 rounded-full   inline-block md:hidden">
                                         <Image src={arrow} alt="icon" className="arrow_icon h-5 w-auto rotate-180" />
                                     </Link>

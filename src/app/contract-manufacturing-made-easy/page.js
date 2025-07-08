@@ -337,8 +337,8 @@ function page() {
             <section className="pt-16 lg:pt-24  bg-white">
                 <div className="max-w-7xl mx-auto px-4">
 
-                    <h2 className='text-[35px] md:text-[80px] font-medium apply-font mb-0 md:mb-4 text-[#C3272B]'>CHOOSE A PRODUCT</h2>
-                    <h3 className='text-4xl md:text-[80px] font-medium apply-font mb-10 md:mb-16 text-black'>FROM OUR RANGE!</h3>
+                    <h2 className='text-[35px] max-[370px]:text-[30px] md:text-[80px] font-medium apply-font mb-0 md:mb-0 text-[#C3272B]'>CHOOSE A PRODUCT</h2>
+                    <h3 className='text-4xl md:text-[80px] max-[370px]:text-[30px] font-medium apply-font mb-10 md:mb-16 text-black'>FROM OUR RANGE!</h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10 card_group">
                         {features.map((item, index) => (
                             <div
@@ -388,8 +388,8 @@ function page() {
             <section className="pt-16 md:pt-24  text-white bg-[#F5F5F5]"
             >
                 <div className="max-w-7xl mx-auto px-4" >
-                    <h2 className='text-4xl md:text-[80px] font-medium apply-font mb-0 md:mb-4 text-[#C3272B]'>DAMEASY OFFERS</h2>
-                    <h3 className='text-[28px]  md:text-[65px] font-medium apply-font mb-10 md:mb-16 text-black'>A RANGE OF PACKAGING  SOLUTIONS!</h3>
+                    <h2 className='text-4xl md:text-[80px] max-[370px]:text-[30px] font-medium apply-font mb-0 md:mb-0 text-[#C3272B]'>DAMEASY OFFERS</h2>
+                    <h3 className='text-[28px]  md:text-[65px] max-[370px]:text-[26px] font-medium apply-font mb-10 md:mb-16 text-black'>A RANGE OF PACKAGING  SOLUTIONS!</h3>
                     <div className='mt-10 text-[#2E2E2E]'>
                         <ul className='text-left space-y-4'>
                             {points.map((item, index) => (
