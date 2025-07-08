@@ -32,17 +32,44 @@ function Header() {
 
     const handleLinkClick = () => setIsOpen(false);
 
-    const headerRef = useRef(null);
+    const [isScrolled, setIsScrolled] = useState(false);
 
-    useEffect(() => {
-      const handleScroll = () => {
-        headerRef.current?.classList.toggle('custom_header', window.scrollY > 80);
-      };
+useEffect(() => {
+    const SCROLL_UPPER_LIMIT = 289; // When to trigger "scrolled"
+    const SCROLL_LOWER_LIMIT = 80; // When to remove "scrolled"
 
-      handleScroll(); // Initial check
-      window.addEventListener('scroll', handleScroll, { passive: true });
-      return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    // Set initial state once, with buffer considered
+    const initialScrollY = Math.floor(window.scrollY);
+    setIsScrolled(initialScrollY >= SCROLL_UPPER_LIMIT);
+
+    const handleScroll = () => {
+        const scrollY = Math.floor(window.scrollY);
+        console.log("scrollY:", scrollY);
+
+        setIsScrolled((prev) => {
+            const newState =
+                (!prev && scrollY >= SCROLL_UPPER_LIMIT)
+                    ? true
+                    : (prev && scrollY <= SCROLL_LOWER_LIMIT)
+                    ? false
+                    : prev;
+
+            if (prev !== newState) {
+                console.log("isScrolled changed:", newState);
+            }
+
+            return newState;
+        });
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    // Trigger once on mount
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
 
     const pathname = usePathname();
 
@@ -50,7 +77,7 @@ function Header() {
         <>
             {/* <div className='container px-4 py-2 text-center bg-[#C3272B] text-white font-medium'>SHOP COMING SOON</div> */}
 
-            <header ref={headerRef} className={`relative overflow-hidden transition-all duration-100   `}>
+            <header className={`relative overflow-hidden transition-all duration-100  ${isScrolled     ? "custom_header" : ""}`}>
                 <div className="mx-auto max-w-8xl px-4 md:px-6 lg:px-8 relative z-10">
                     <div className="flex md:py-2 justify-between gap-4 items-start">
                         <button
@@ -63,7 +90,9 @@ function Header() {
                         </button>
                         <Link href="/" className="self-baseline">
                             <Image
-                                className={`sticky_logo`}
+                                className={`sticky_logo  pointer-events-all transform duration-100
+                                ${isScrolled     ? "custom_header scale-[0.8]" : "scale-[1] "}`}
+
                                 src={logo}
                                 alt="Logo"
 
@@ -118,7 +147,7 @@ function Header() {
 
                             <Link href="/" onClick={handleLinkClick} className="block text-xl md:text-2xl font-medium text-white hover:text-[#F8AB1D]">Home</Link>
                             <Link href="/products" onClick={handleLinkClick} className="block text-xl md:text-2xl font-medium text-white hover:text-[#F8AB1D]">Products</Link>
-                            <div className="flex gap-2 md:gap-4 items-center">
+                            <div className="flex gap-2 md:gap-4 items-center md:hidden">
                                 <div className="bg-[#C3272B] px-4 md:px-8 py-2 md:py-3 rounded-3xl">
                                     <Image src={message} alt="Message" className="md:h-auto h-4 md:w-6 md:min-w-auto min-w-12 " />
                                 </div>

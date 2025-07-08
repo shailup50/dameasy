@@ -11,7 +11,7 @@ function WeAre2({ title, subtitle, description, img }) {
                     <div className='mx-auto max-full items-center flex flex-wrap md:flex-nowrap gap-0 bg-[#FFF1D7] rounded-2xl overflow-hidden shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]'>
                     <div className='w-full md:w-3/5 md:order-1 order-2'>
                             <div className='p-6 md:p-10 py-10 md:py-14'>
-                                <h3 className='text-4xl mb-1 md:text-[42px] font-bold uppercase'
+                                <h3 className='text-4xl mb-4 md:mb-6 md:text-[42px] font-bold uppercase'
                                 dangerouslySetInnerHTML={{__html: subtitle}} />
                                 {/* <h2 className='text-[50px] md:text-[80px] text-[#C3272B] font2 font-medium mb-2'>{title}</h2> */}
                                 <p className='text-base md:text-2xl font-medium md:w-[90%]'>{description}</p>
