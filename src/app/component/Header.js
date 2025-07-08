@@ -38,7 +38,6 @@ useEffect(() => {
     const handleScroll = () => {
         const scrollY = window.scrollY;
 
-        // Only update state if value actually changes
         setIsScrolled((prev) => {
             const shouldBeScrolled = scrollY >= 80;
             return prev !== shouldBeScrolled ? shouldBeScrolled : prev;
@@ -47,7 +46,6 @@ useEffect(() => {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
 
-    // Initial check in case the user has already scrolled
     handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
@@ -59,7 +57,7 @@ useEffect(() => {
         <>
             {/* <div className='container px-4 py-2 text-center bg-[#C3272B] text-white font-medium'>SHOP COMING SOON</div> */}
 
-            <header className={`relative overflow-hidden transition-all duration-300  ${isScrolled     ? "custom_header" : ""}`}>
+            <header className={`relative overflow-hidden transition-all duration-100  ${isScrolled     ? "custom_header" : ""}`}>
                 <div className="mx-auto max-w-8xl px-4 md:px-6 lg:px-8 relative z-10">
                     <div className="flex md:py-2 justify-between gap-4 items-start">
                         <button
@@ -72,8 +70,8 @@ useEffect(() => {
                         </button>
                         <Link href="/" className="self-baseline">
                             <Image
-                                className={`sticky_logo  pointer-events-all transform duration-[400ms]   ease-in-out
-                                ${isScrolled     ? "custom_header scale-[0.8]" : "scale-[1] translate-y-[0] 800:scale-[1] "}`}
+                                className={`sticky_logo  pointer-events-all transform duration-100
+                                ${isScrolled     ? "custom_header scale-[0.8]" : "scale-[1] "}`}
 
                                 src={logo}
                                 alt="Logo"

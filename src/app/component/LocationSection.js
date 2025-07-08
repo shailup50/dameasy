@@ -63,7 +63,7 @@ export default function LocationSection() {
                     </div>
 
 
-                    <div className="  md:block h-6 mx-4 w-[3px] bg-black"></div>
+                    <div className="  md:block h-14 md:h-6 mx-4 w-[3px] bg-black"></div>
 
 
                     <div className=" flex items-center gap-4 md:gap-6 flex-wrap justify-center md:flex-nowrap mt-4 md:mt-0">
