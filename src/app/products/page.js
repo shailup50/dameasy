@@ -332,13 +332,13 @@ function page() {
     return (
         <>
             <Banner banner={banner} logo={logo} title={title} />
-            <Marquee texts={items} speed={25} />
+            {/* <Marquee texts={items} speed={25} /> */}
 
-            <section className="py-16 px-4 bg-white">
-                <div className="max-w-7xl mx-auto">
+            <section className="pt-16 lg:pt-24  bg-white">
+                <div className="max-w-7xl mx-auto px-4">
 
-                    <h2 className='text-5xl md:text-[80px] font-semibold mb-0 md:mb-4 text-[#C3272B]'>CHOOSE A PRODUCT</h2>
-                    <h3 className='text-5xl md:text-[80px] font-semibold mb-10 md:mb-16 text-black'>FROM OUR RANGE!</h3>
+                    <h2 className='text-5xl md:text-[80px] font-medium apply-font mb-0 md:mb-4 text-[#C3272B]'>CHOOSE A PRODUCT</h2>
+                    <h3 className='text-5xl md:text-[80px] font-medium apply-font mb-10 md:mb-16 text-black'>FROM OUR RANGE!</h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10 card_group">
                         {features.map((item, index) => (
                             <div
@@ -363,13 +363,13 @@ function page() {
                     </h2>
                 </div>
             </section>
-            <section className="py-12 md:py-20 px-4 text-white text-center"
+            <section className="py-12 md:py-20 px-4 text-white text-center mt-16 md:mt-24"
                 style={{
                     backgroundImage: 'radial-gradient(circle, #FD6100 0%, #B40E13 100%)'
                 }}>
                 <div className="max-w-7xl mx-auto">
-                    <h2 className='text-5xl md:text-[80px] font-semibold mb-0 md:mb-4 text-[#fff]'>OUR VERSATILE FOOD</h2>
-                    <h3 className='text-5xl md:text-[80px] font-semibold mb-6 md:mb-8 text-black'>CATEGORY RANGE</h3>
+                    <h2 className='text-5xl md:text-[80px] font-medium apply-font mb-0 md:mb-4 text-[#fff]'>OUR VERSATILE FOOD</h2>
+                    <h3 className='text-5xl md:text-[80px] font-medium apply-font mb-6 md:mb-8 text-black'>CATEGORY RANGE</h3>
                 </div>
 
 
@@ -385,11 +385,11 @@ function page() {
                 </div> */}
             </section>
 
-            <section className="py-12 md:py-20 px-4 text-white bg-[#F5F5F5]"
+            <section className="pt-16 md:pt-24  text-white bg-[#F5F5F5]"
             >
-                <div className="max-w-7xl mx-auto">
-                    <h2 className='text-5xl md:text-[80px] font-semibold mb-0 md:mb-4 text-[#C3272B]'>DAMEASY OFFERS</h2>
-                    <h3 className='text-5xl md:text-[80px] font-semibold mb-10 md:mb-16 text-black'>A RANGE OF PACKAGING  SOLUTIONS!</h3>
+                <div className="max-w-7xl mx-auto px-4" >
+                    <h2 className='text-5xl md:text-[80px] font-medium apply-font mb-0 md:mb-4 text-[#C3272B]'>DAMEASY OFFERS</h2>
+                    <h3 className='text-5xl md:text-[80px] font-medium apply-font mb-10 md:mb-16 text-black'>A RANGE OF PACKAGING  SOLUTIONS!</h3>
                     <div className='mt-10 text-[#2E2E2E]'>
                         <ul className='text-left space-y-4'>
                             {points.map((item, index) => (

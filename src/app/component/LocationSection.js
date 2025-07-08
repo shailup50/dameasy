@@ -16,7 +16,7 @@ export default function LocationSection() {
         <section className="bg-[#f7f7f7]">
 
             <div className="max-w-7xl mx-auto px-4 py-12 md:py-16 text-center">
-                <h2 className="text-[30px] md:text-[50px] font-bold text-center text-black mb-10 md:mb-20">WHERE TO FIND US!</h2>
+                <h2 className="text-[30px] md:text-[50px] font-medium apply-font text-center text-black mb-8 md:mb-10 ">WHERE TO FIND US!</h2>
                 <div className="flex md:flex-nowrap justify-center flex-wrap gap-8 text-left">
 
                     <div className="w-full md:w-[40%]">
@@ -54,18 +54,20 @@ export default function LocationSection() {
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-center items-center gap-4 text-black font-bold text-sm">
 
                     <div className="flex items-center gap-4 md:gap-6 flex-wrap justify-center">
-                        <p className="text-lg md:text-xl md:w-auto w-full text-center">OUR SOCIAL PRESENCE</p>
+                        <p className="text-lg md:text-xl md:w-auto w-ful l text-center">OUR SOCIAL PRESENCE</p>
                         <FaFacebook  className="text-3xl md:text-3xl hover:text-[#C3272B]  cursor-pointer" />
                         <FaTwitter className="text-3xl md:text-3xl hover:text-[#C3272B]  cursor-pointer" />
                         <FaLinkedinIn className="text-3xl md:text-3xl hover:text-[#C3272B]  cursor-pointer" />
                         <FaInstagram className="text-3xl md:text-3xl hover:text-[#C3272B]  cursor-pointer" />
+                        <Image src={whatsapp} alt="whatsapp"  className="h-8 -ms-2  cursor-pointer inline-block md:hidden" />
+
                     </div>
 
 
                     <div className="hidden md:block h-6 mx-4 w-[3px] bg-black"></div>
 
 
-                    <div className="flex items-center gap-4 md:gap-6 flex-wrap justify-center md:flex-nowrap mt-4 md:mt-0">
+                    <div className=" hidden md:flex items-center gap-4 md:gap-6 flex-wrap justify-center md:flex-nowrap mt-4 md:mt-0">
                     <p className="text-lg md:text-xl w-full text-center">WHATSAPP US</p>
                         <Image src={whatsapp} alt="whatsapp"  className="h-10  cursor-pointer" />
                     </div>

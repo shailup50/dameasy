@@ -109,8 +109,8 @@ export default function Category() {
 
     const [activeIndex, setActiveIndex] = useState(0);
     return (
-        <div className="pt-12 md:pt-20 px-4 text-black text-center">
-            <h2 className="text-4xl md:text-5xl  font-bold mb-10 md:mb-14 uppercase">
+        <div className="pt-16 md:pt-20 pb-16 px-4 text-black text-center">
+            <h2 className="text-4xl md:text-5xl  font-medium apply-font mb-10 md:mb-14 uppercase">
             Packaging Solutions
             </h2>
 

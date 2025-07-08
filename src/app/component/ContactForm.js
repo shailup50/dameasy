@@ -4,7 +4,7 @@ export default function ContactForm() {
         <div className="max-w-7xl mx-auto flex flex-wrap md:flex-nowrap gap-10 justify-between">
           {/* Left Text Block */}
           <div className="md:w-[55%] w-full">
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight text-[#C3272B] mb-4">
+            <h2 className="text-4xl md:text-5xl font-medium apply-font leading-tight text-[#C3272B] mb-4">
               LET’S CREATE THE FUTURE OF FOOD TOGETHER
             </h2>
             <p className="text-xl md:text-2xl text-white">

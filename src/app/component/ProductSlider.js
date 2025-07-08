@@ -76,8 +76,8 @@ export default function ProductSlider() {
 
     const [activeIndex, setActiveIndex] = useState(0);
     return (
-        <div className="py-12 md:py-20 px-4 text-white text-center bg-center bg-cover" style={{ backgroundImage:`url(${bgimg.src})` }}>
-            <h2 className="text-4xl md:text-5xl  font-bold mb-10 md:mb-14">
+        <div className="py-12 md:py-20 px-4 text-white text-center bg-center bg-cover mt-16 md:mt-24" style={{ backgroundImage:`url(${bgimg.src})` }}>
+            <h2 className="text-4xl md:text-5xl font-medium apply-font  font-bold mb-10 md:mb-14">
                 OUR CATEGORY SHOWCASE
             </h2>
 

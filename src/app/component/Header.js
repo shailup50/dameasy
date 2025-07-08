@@ -5,6 +5,8 @@ import { FiMenu, FiX } from "react-icons/fi";
 import message from "../../asserts/images/email.svg"
 import logo from "../../asserts/images/logo.png"
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
 function Header() {
     const [isOpen, setIsOpen] = useState(false);
@@ -29,23 +31,23 @@ function Header() {
 
     const [isScrolled, setIsScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100);
-    };
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 100);
+        };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+    const pathname = usePathname();
 
     return (
         <>
-            <div className='container px-4 py-2 text-center bg-[#C3272B] text-white font-medium'>SHOP COMING SOON</div>
+            {/* <div className='container px-4 py-2 text-center bg-[#C3272B] text-white font-medium'>SHOP COMING SOON</div> */}
 
-            <div className={`relative overflow-hidden ${isScrolled ? "custom_header" : ""}`}>
-                <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-2 relative z-10">
-                    <div className="flex pt-4 justify-between gap-4 items-center">
+            <header className={`relative overflow-hidden  duration-300 ${isScrolled ? "custom_header" : ""}`}>
+                <div className="mx-auto max-w-8xl px-4 md:px-6 lg:px-8 relative z-10">
+                    <div className="flex md:py-2 justify-between gap-4 items-start">
                         <button
                             onClick={() => setIsOpen(true)}
                             className="  text-white  transition-transform"
@@ -54,16 +56,37 @@ function Header() {
                                 <FiMenu size={40} className="cursor-pointer" />
                             </div>
                         </button>
-                        <Link href="/">
-                        <Image
-                        className="sticky_logo"
+                        <Link href="/" className="self-baseline">
+                            <Image
+                                className={`sticky_logo  pointer-events-all transform duration-[400ms]   ease-in-out
+                                ${isScrolled ? "custom_header scale-[0.8]" : "scale-[1] translate-y-[0] 800:scale-[1] "}`}
+
                                 src={logo}
                                 alt="Logo"
-                                width="150"
+
                             />
-                            </Link>
-                        <div className="bg-[#C3272B] px-6 md:px-8 py-2 md:py-3 rounded-3xl">
-                            <Image src={message} alt="Message" />
+                        </Link>
+                        <div className="md:flex gap-2 md:gap-4 items-center hidden">
+                            <div className="bg-[#C3272B] px-4 md:px-8 py-2 md:py-3 rounded-3xl">
+                                <Image src={message} alt="Message" className="md:h-auto h-4 md:w-6 md:min-w-auto min-w-12 " />
+                            </div>
+
+                            {pathname === "/" && (
+                                <Link href="/products" title="Go to Products" className="bg-[#C3272B]  px-3 md:px-8 py-2 md:py-3 rounded-3xl   ">
+                                    <FaChevronRight
+
+                                        className="text-white  cursor-pointer"
+                                    />
+                                </Link>
+                            )}
+                            {pathname === "/products" && (
+                                <Link href="/" title="Back to Home" className="bg-[#C3272B]  px-4 md:px-8 py-2 md:py-3 rounded-3xl   ">
+                                    <FaChevronLeft
+
+                                        className="text-white  cursor-pointer"
+                                    />
+                                </Link>
+                            )}
                         </div>
 
                     </div>
@@ -94,16 +117,38 @@ function Header() {
                         <div className="h-[1px] w-full bg-white mt-4"></div>
 
                         <div className="px-6 mt-10 space-y-6" id="links">
+                        {pathname === "/" && (
+                                <Link href="/products" title="Go to Products" className="bg-[#C3272B]  px-8 py-3  rounded-full inline-block md:hidden ">
+                                    <FaChevronRight
 
+                                        className="text-white  cursor-pointer"
+                                    />
+                                </Link>
+                            )}
+                            {pathname === "/products" && (
+                                <Link href="/" title="Back to Home" className="bg-[#C3272B]  px-8 py-3 rounded-full   inline-block md:hidden">
+                                    <FaChevronLeft
+
+                                        className="text-white  cursor-pointer"
+                                    />
+                                </Link>
+                            )}
                             <Link href="/" onClick={handleLinkClick} className="block text-xl md:text-2xl font-medium text-white hover:text-[#F8AB1D]">Home</Link>
                             <Link href="/products" onClick={handleLinkClick} className="block text-xl md:text-2xl font-medium text-white hover:text-[#F8AB1D]">Products</Link>
+                            <div className="flex gap-2 md:gap-4 items-center">
+                            <div className="bg-[#C3272B] px-4 md:px-8 py-2 md:py-3 rounded-3xl">
+                                <Image src={message} alt="Message" className="md:h-auto h-4 md:w-6 md:min-w-auto min-w-12 " />
+                            </div>
+
+
+                        </div>
                             {/* <a href="#" onClick={handleLinkClick} className="block text-xl md:text-2xl font-medium text-white hover:text-[#F8AB1D]">Services</a>
                             <a href="#" onClick={handleLinkClick} className="block text-xl md:text-2xl font-medium text-white hover:text-[#F8AB1D]">Contact</a> */}
                         </div>
                     </div>
                 </div>
 
-            </div>
+            </header>
         </>
     )
 }
