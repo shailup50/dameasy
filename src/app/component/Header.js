@@ -36,7 +36,7 @@ function Header() {
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 100);
+            setIsScrolled(window.scrollY > 20);
         };
 
         window.addEventListener("scroll", handleScroll);
@@ -48,7 +48,7 @@ function Header() {
         <>
             {/* <div className='container px-4 py-2 text-center bg-[#C3272B] text-white font-medium'>SHOP COMING SOON</div> */}
 
-            <header className={`relative overflow-hidden  duration-300 ${isScrolled ? "custom_header" : ""}`}>
+            <header className={`relative overflow-hidden  ${isScrolled ? "custom_header" : ""}`}>
                 <div className="mx-auto max-w-8xl px-4 md:px-6 lg:px-8 relative z-10">
                     <div className="flex md:py-2 justify-between gap-4 items-start">
                         <button
@@ -114,7 +114,17 @@ function Header() {
                         <div className="h-[1px] w-full bg-white mt-4"></div>
 
                         <div className="px-6 mt-10 space-y-6" id="links">
-                        {pathname === "/" && (
+
+                            <Link href="/" onClick={handleLinkClick} className="block text-xl md:text-2xl font-medium text-white hover:text-[#F8AB1D]">Home</Link>
+                            <Link href="/products" onClick={handleLinkClick} className="block text-xl md:text-2xl font-medium text-white hover:text-[#F8AB1D]">Products</Link>
+                            <div className="flex gap-2 md:gap-4 items-center">
+                            <div className="bg-[#C3272B] px-4 md:px-8 py-2 md:py-3 rounded-3xl">
+                                <Image src={message} alt="Message" className="md:h-auto h-4 md:w-6 md:min-w-auto min-w-12 " />
+                            </div>
+
+                        </div>
+                        <div className="w-full">
+                            {pathname === "/" && (
                                 <Link href="/products" title="Go to Products" onClick={handleLinkClick} className="bg-[#C3272B]  px-8 py-3  rounded-full inline-block md:hidden ">
                                    <Image src={arrow} alt="icon" className="arrow_icon h-5 w-auto" />
                                 </Link>
@@ -124,15 +134,8 @@ function Header() {
                                     <Image src={arrow} alt="icon" className="arrow_icon h-5 w-auto rotate-180" />
                                 </Link>
                             )}
-                            <Link href="/" onClick={handleLinkClick} className="block text-xl md:text-2xl font-medium text-white hover:text-[#F8AB1D]">Home</Link>
-                            <Link href="/products" onClick={handleLinkClick} className="block text-xl md:text-2xl font-medium text-white hover:text-[#F8AB1D]">Products</Link>
-                            <div className="flex gap-2 md:gap-4 items-center">
-                            <div className="bg-[#C3272B] px-4 md:px-8 py-2 md:py-3 rounded-3xl">
-                                <Image src={message} alt="Message" className="md:h-auto h-4 md:w-6 md:min-w-auto min-w-12 " />
-                            </div>
+</div>
 
-
-                        </div>
                             {/* <a href="#" onClick={handleLinkClick} className="block text-xl md:text-2xl font-medium text-white hover:text-[#F8AB1D]">Services</a>
                             <a href="#" onClick={handleLinkClick} className="block text-xl md:text-2xl font-medium text-white hover:text-[#F8AB1D]">Contact</a> */}
                         </div>

@@ -118,7 +118,7 @@ export default function Home() {
 
           <Image src={step} alt="icons" className="py-0 md:py-16 w-full md:h-auto" />
 
-          <p className="text-center text-4xl md:text-5xl mt-12  font-medium text-[#C3272B]">
+          <p className="text-center text-4xl md:text-5xl mt-12   font-medium apply-font text-[#C3272B]">
             Your Idea, Our Drive, Straight to Shelf!
           </p>
         </section>

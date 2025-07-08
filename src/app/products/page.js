@@ -66,7 +66,7 @@ function page() {
 
     const about = {
         title: "We’re Dameasy",
-        subtitle: `Our <br> Culinary Champions`,
+        subtitle: `Our  Culinary Champions`,
         description: `Our in-house food testing team supports product and recipe development while delivering critical insights on
         real-world application and performance`,
         img: aboutimg
@@ -358,7 +358,7 @@ function page() {
                         ))}
                     </div>
 
-                    <h2 className="text-[#C3272B] font-semibold text-[22px] md:text-5xl mt-10 md:mt-16">
+                    <h2 className="text-[#C3272B]  font-medium apply-font text-[22px] md:text-5xl mt-10 md:mt-16">
                         WITH DAMEASY TEAM, ANYTHING IS POSSIBLE!
                     </h2>
                 </div>
@@ -389,7 +389,7 @@ function page() {
             >
                 <div className="max-w-7xl mx-auto px-4" >
                     <h2 className='text-5xl md:text-[80px] font-medium apply-font mb-0 md:mb-4 text-[#C3272B]'>DAMEASY OFFERS</h2>
-                    <h3 className='text-5xl md:text-[80px] font-medium apply-font mb-10 md:mb-16 text-black'>A RANGE OF PACKAGING  SOLUTIONS!</h3>
+                    <h3 className='text-5xl md:text-[65px] font-medium apply-font mb-10 md:mb-16 text-black'>A RANGE OF PACKAGING  SOLUTIONS!</h3>
                     <div className='mt-10 text-[#2E2E2E]'>
                         <ul className='text-left space-y-4'>
                             {points.map((item, index) => (

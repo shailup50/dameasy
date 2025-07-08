@@ -5,7 +5,7 @@ import React from 'react'
 function Banner({ banner, logo, title }) {
     return (
         <>
-            <section className={`-mt-38 md:-mt-56  py-16 h-[400px] lg:h-[600px] bg-fixed flex flex-wrap items-center justify-center relative`}
+            <section className={`-mt-40 md:-mt-56  py-16 h-[400px] lg:h-[600px] bg-fixed flex flex-wrap items-center justify-center relative`}
                 style={{ background: `url(${banner?.src}) top center / cover no-repeat` }}
             >
                 <div className='w-full h-full top-0 left-0 bg-[#C3272B] absolute opacity-40'></div>

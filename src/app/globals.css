@@ -206,11 +206,12 @@ html {
 }
 
 .custom_header .sticky_logo {
- height:80px;
- width: auto;
- object-fit: contain;
+  height: 80px;
+  width: auto;
+  object-fit: contain;
 }
-.custom_header .items-start{
+
+.custom_header .items-start {
   align-items: center;
 }
 
@@ -224,14 +225,27 @@ html {
   }
 }
 
-@media (max-width:767px) {
-  .sticky_logo  {
-    margin-top: 3rem;
+
+@media (min-width:1200px) {
+  .sticky_logo {
+    margin-left: 18%;
   }
   .custom_header .sticky_logo{
+    margin-left: 40%;
+  }
+}
+
+
+@media (max-width:767px) {
+  .sticky_logo {
+    margin-top: 3rem;
+  }
+
+  .custom_header .sticky_logo {
     margin-top: 0;
   }
-  header .self-baseline{
+
+  header .self-baseline {
     margin-left: auto;
     margin-right: auto;
   }
