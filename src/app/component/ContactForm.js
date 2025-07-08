@@ -13,6 +13,7 @@ export default function ContactForm() {
   });
 
   const [successMsg, setSuccessMsg] = useState('');
+  const [submitting, setSubmitting] = useState(false); // Track submit state
 
   useEffect(() => {
     if (successMsg) {
@@ -26,7 +27,7 @@ export default function ContactForm() {
     let val = value;
 
     if (name === 'mobile') {
-      val = val.replace(/[^0-9]/g, '').slice(0, 10); // 10-digit numeric only
+      val = val.replace(/[^0-9]/g, '').slice(0, 10); // Allow only digits, max 10
     }
 
     setFormData({ ...formData, [name]: val });
@@ -48,8 +49,11 @@ export default function ContactForm() {
       return;
     }
 
+    setSubmitting(true); // Disable the button
+
     try {
       const res = await axios.post('/testmail', formData);
+
       if (res.data.success) {
         setSuccessMsg('Form submitted successfully!');
         setFormData({
@@ -65,6 +69,8 @@ export default function ContactForm() {
     } catch (error) {
       console.error(error);
       alert('Something went wrong');
+    } finally {
+      setSubmitting(false); // Re-enable the button
     }
   };
 
@@ -134,9 +140,12 @@ export default function ContactForm() {
 
             <button
               type="submit"
-              className="bg-[#F5A623] hover:bg-[#e0961e] text-lg text-black font-medium px-10 py-3 rounded transition-all"
+              disabled={submitting}
+              className={`bg-[#F5A623] hover:bg-[#e0961e] text-lg text-black font-medium px-10 py-3 rounded transition-all ${
+                submitting ? 'opacity-50 cursor-not-allowed' : ''
+              }`}
             >
-              Submit
+              {submitting ? 'Submitting...' : 'Submit'}
             </button>
 
             {successMsg && (
