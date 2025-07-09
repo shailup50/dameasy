@@ -253,4 +253,7 @@ html {
     margin-left: auto;
     margin-right: auto;
   }
+  .swiper-horizontal{
+    padding: 8px !important;
+  }
 }

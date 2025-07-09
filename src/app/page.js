@@ -23,18 +23,18 @@ import BlogSection from "./component/BlogSection";
 
 
 export default function Home() {
-  const title =  `Contract Manufacturing <br/> Made Easy`
+  const title = `Contract Manufacturing <br/> Made Easy`
 
   const items = [
     "Custom Crafted",
     "Scale Ready",
     "Quality Driven",
     "Custom Crafted",
-    "Custom Crafted",
+
     "Scale Ready",
     "Quality Driven",
     "Custom Crafted",
-    "Custom Crafted",
+
     "Scale Ready",
     "Quality Driven",
     "Custom Crafted",
@@ -100,8 +100,8 @@ export default function Home() {
                   <div className="flex items-start gap-3">
 
                     <div className="pl-6 border-l-2 border-white circle_after">
-                      <h2 className="text-xl md:text-2xl font-bold mb-2">{item.title}</h2>
-                      <p className="text-base font-medium md:text-lg">{item.description}</p>
+                      <h2 className="text-xl md:text-3xl font-bold mb-2 md:mb-5">{item.title}</h2>
+                      <p className="text-base font-medium md:text-xl">{item.description}</p>
                     </div>
                   </div>
                 </div>
@@ -113,12 +113,12 @@ export default function Home() {
 
         <section className="max-w-7xl mx-auto px-4 pt-16 lg:pt-24">
 
-          <h2 className="text-5xl md:text-[80px] font-medium apply-font mb-0 md:mb-4 text-[#C3272B]">WHERE IDEAS</h2>
+          <h2 className="text-4xl md:text-[80px] font-medium apply-font mb-0 md:mb-4 text-[#C3272B]">WHERE IDEAS</h2>
           <h3 className="text-4xl md:text-[80px] font-medium apply-font mb-8 md:mb-10 text-black">MEET EXECUTION</h3>
 
           <Image src={step} alt="icons" className="py-0 md:py-16 w-full md:h-auto" />
 
-          <p className="text-center text-3xl md:text-5xl mt-12   font-medium apply-font text-[#C3272B]">
+          <p className="text-center text-2xl md:text-5xl mt-12   font-medium apply-font text-[#C3272B]">
             Your Idea, Our Drive, Straight to Shelf!
           </p>
         </section>

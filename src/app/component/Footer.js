@@ -66,7 +66,7 @@ export default function Footer() {
 
 
         <div className="bg-[#C3272B] text-center py-3 text-white text-sm">
-          Copyright © 2024 Dameasy. All Rights Reserved
+          Copyright © 2025 Dameasy. All Rights Reserved
         </div>
       </footer>
     </>

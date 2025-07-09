@@ -334,7 +334,7 @@ function page() {
             <Banner banner={banner} logo={logo} title={title} />
             {/* <Marquee texts={items} speed={25} /> */}
 
-            <section className="pt-16 lg:pt-24  bg-white">
+            <section className="pt-8 lg:pt-12  bg-white">
                 <div className="max-w-7xl mx-auto px-4">
 
                     <h2 className='text-[35px] max-[370px]:text-[30px] md:text-[80px] font-medium apply-font mb-0 md:mb-0 text-[#C3272B]'>CHOOSE A PRODUCT</h2>
@@ -363,13 +363,13 @@ function page() {
                     </h2>
                 </div>
             </section>
-            <section className="py-12 md:py-20 px-4 text-white text-center mt-16 md:mt-24"
+            <section className="py-12 md:py-16 px-4 text-white text-center mt-8 md:mt-16"
                 style={{
                     backgroundImage: 'radial-gradient(circle, #FD6100 0%, #B40E13 100%)'
                 }}>
                 <div className="max-w-7xl mx-auto">
-                    <h2 className='text-[30px] md:text-[80px] font-medium apply-font mb-0 md:mb-4 text-[#fff]'>OUR VERSATILE FOOD</h2>
-                    <h3 className='text-[30px] md:text-[80px] font-medium apply-font mb-6 md:mb-8 text-black'>CATEGORY RANGE</h3>
+                    <h2 className='text-[30px] md:text-[80px] font-medium apply-font mb-0 md:mb-0 text-[#fff]'>OUR VERSATILE FOOD</h2>
+                    <h3 className='text-[30px] md:text-[80px] font-medium apply-font mb-0 md:mb-4 text-black'>CATEGORY RANGE</h3>
                 </div>
 
 
@@ -385,17 +385,17 @@ function page() {
                 </div> */}
             </section>
 
-            <section className="pt-16 md:pt-24  text-white bg-[#F5F5F5]"
+            <section className="pt-12 md:pt-20  text-white bg-[#F5F5F5]"
             >
                 <div className="max-w-7xl mx-auto px-4" >
                     <h2 className='text-4xl md:text-[80px] max-[370px]:text-[30px] font-medium apply-font mb-0 md:mb-0 text-[#C3272B]'>DAMEASY OFFERS</h2>
-                    <h3 className='text-[28px]  md:text-[65px] max-[370px]:text-[26px] font-medium apply-font mb-10 md:mb-16 text-black'>A RANGE OF PACKAGING  SOLUTIONS!</h3>
+                    <h3 className='text-[18px]  md:text-[65px] max-[370px]:text-[17px] font-medium apply-font mb-6 md:mb-10 text-black'>A RANGE OF PACKAGING  SOLUTIONS!</h3>
                     <div className='mt-10 text-[#2E2E2E]'>
                         <ul className='text-left space-y-4'>
                             {points.map((item, index) => (
                                 <li className='flex gap-4 items-center1' key={index}>
                                     <Image src={rocket} alt={item.title} className='h-6 mt-1' />
-                                    <p className='text-xl md:text-[24px] font-medium uppercase'><span className='text-[#C3272B] font-semibold'>{item.title} : </span>{item.info}
+                                    <p className='text-lg md:text-[24px] font-medium uppercase'><span className='text-[#C3272B] font-semibold'>{item.title} : </span>{item.info}
                                     </p>
                                 </li>
                             ))}
