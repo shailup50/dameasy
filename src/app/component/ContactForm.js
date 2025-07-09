@@ -34,45 +34,51 @@ export default function ContactForm() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    const { firstName, mobile, email, message } = formData;
+  const { firstName, mobile, email, message } = formData;
 
-    if (!firstName || !mobile || !email || !message) {
-      alert('Please fill all required fields.');
-      return;
+  if (!firstName || !mobile || !email || !message) {
+    alert('Please fill all required fields.');
+    return;
+  }
+
+  if (mobile.length !== 10) {
+    alert('Mobile number must be exactly 10 digits.');
+    return;
+  }
+
+  const emailPattern = /\S+@\S+\.\S+/;
+  if (!emailPattern.test(email)) {
+    alert('Invalid email format.');
+    return;
+  }
+
+  setSubmitting(true); // Disable the button
+
+  try {
+    const res = await axios.post('/testmail', formData);
+
+    if (res.data.success) {
+      setSuccessMsg('Form submitted successfully!');
+      setFormData({
+        firstName: '',
+        lastName: '',
+        mobile: '',
+        email: '',
+        message: '',
+      });
+    } else {
+      alert(res.data.message || 'Something went wrong');
     }
+  } catch (error) {
+    console.error(error);
+    alert('Something went wrong');
+  } finally {
+    setSubmitting(false); // Re-enable the button
+  }
+};
 
-    const emailPattern = /\S+@\S+\.\S+/;
-    if (!emailPattern.test(email)) {
-      alert('Invalid email format.');
-      return;
-    }
-
-    setSubmitting(true); // Disable the button
-
-    try {
-      const res = await axios.post('/testmail', formData);
-
-      if (res.data.success) {
-        setSuccessMsg('Form submitted successfully!');
-        setFormData({
-          firstName: '',
-          lastName: '',
-          mobile: '',
-          email: '',
-          message: '',
-        });
-      } else {
-        alert(res.data.message || 'Something went wrong');
-      }
-    } catch (error) {
-      console.error(error);
-      alert('Something went wrong');
-    } finally {
-      setSubmitting(false); // Re-enable the button
-    }
-  };
 
   return (
     <section className="bg-black text-white py-12 md:py-16 px-4">
