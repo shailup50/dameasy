@@ -21,6 +21,11 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet"></link>
         {/* <link rel="icon" href={src.feviconIcon}  type="image/x-icon" /> */}
+
+
+
+
+
       </head>
       <body>
         <Header />
