@@ -12,7 +12,8 @@
   --primary-font: 'General Sans', sans-serif;
   --secondary-font: 'Yesteryear', cursive;
 }
-html{
+
+html {
   scroll-behavior: smooth;
 }
 
@@ -105,6 +106,10 @@ html {
 
 .product_card .swiper-slide-active {
   box-shadow: 0 0px 5px 3px rgb(0 0 0 / 38%);
+}
+
+.shadow_c {
+  box-shadow: 0px 0px 2px 2px #0000001F;
 }
 
 /* .perspective {
@@ -234,7 +239,8 @@ html {
   .sticky_logo {
     margin-left: 18%;
   }
-  .custom_header .sticky_logo{
+
+  .custom_header .sticky_logo {
     margin-left: 40%;
   }
 }
@@ -253,7 +259,8 @@ html {
     margin-left: auto;
     margin-right: auto;
   }
-  .swiper-horizontal{
+
+  .swiper-horizontal {
     padding: 8px !important;
   }
 }

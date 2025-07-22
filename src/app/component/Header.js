@@ -34,41 +34,41 @@ function Header() {
 
     const [isScrolled, setIsScrolled] = useState(false);
 
-useEffect(() => {
-    const SCROLL_UPPER_LIMIT = 289; // When to trigger "scrolled"
-    const SCROLL_LOWER_LIMIT = 80; // When to remove "scrolled"
+    useEffect(() => {
+        const SCROLL_UPPER_LIMIT = 289; // When to trigger "scrolled"
+        const SCROLL_LOWER_LIMIT = 80; // When to remove "scrolled"
 
-    // Set initial state once, with buffer considered
-    const initialScrollY = Math.floor(window.scrollY);
-    setIsScrolled(initialScrollY >= SCROLL_UPPER_LIMIT);
+        // Set initial state once, with buffer considered
+        const initialScrollY = Math.floor(window.scrollY);
+        setIsScrolled(initialScrollY >= SCROLL_UPPER_LIMIT);
 
-    const handleScroll = () => {
-        const scrollY = Math.floor(window.scrollY);
-        console.log("scrollY:", scrollY);
+        const handleScroll = () => {
+            const scrollY = Math.floor(window.scrollY);
+            console.log("scrollY:", scrollY);
 
-        setIsScrolled((prev) => {
-            const newState =
-                (!prev && scrollY >= SCROLL_UPPER_LIMIT)
-                    ? true
-                    : (prev && scrollY <= SCROLL_LOWER_LIMIT)
-                    ? false
-                    : prev;
+            setIsScrolled((prev) => {
+                const newState =
+                    (!prev && scrollY >= SCROLL_UPPER_LIMIT)
+                        ? true
+                        : (prev && scrollY <= SCROLL_LOWER_LIMIT)
+                            ? false
+                            : prev;
 
-            if (prev !== newState) {
-                console.log("isScrolled changed:", newState);
-            }
+                if (prev !== newState) {
+                    console.log("isScrolled changed:", newState);
+                }
 
-            return newState;
-        });
-    };
+                return newState;
+            });
+        };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
+        window.addEventListener("scroll", handleScroll, { passive: true });
 
-    // Trigger once on mount
-    handleScroll();
+        // Trigger once on mount
+        handleScroll();
 
-    return () => window.removeEventListener("scroll", handleScroll);
-}, []);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
 
     const pathname = usePathname();
@@ -77,7 +77,7 @@ useEffect(() => {
         <>
             {/* <div className='container px-4 py-2 text-center bg-[#C3272B] text-white font-medium'>SHOP COMING SOON</div> */}
 
-            <header className={`relative overflow-hidden transition-all duration-100  ${isScrolled     ? "custom_header" : ""}`}>
+            <header className={`relative overflow-hidden transition-all duration-100  ${isScrolled ? "custom_header" : ""}`}>
                 <div className="mx-auto max-w-8xl px-4 md:px-6 lg:px-8 relative z-10">
                     <div className="flex md:py-2 justify-between gap-4 items-start">
                         <button
@@ -91,7 +91,7 @@ useEffect(() => {
                         <Link href="/" className="self-baseline">
                             <Image
                                 className={`sticky_logo  pointer-events-all transform duration-100
-                                ${isScrolled     ? "custom_header scale-[0.8]" : "scale-[1] "}`}
+                                ${isScrolled ? "custom_header scale-[0.8]" : "scale-[1] "}`}
 
                                 src={logo}
                                 alt="Logo"
