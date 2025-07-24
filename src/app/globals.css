@@ -112,6 +112,15 @@ html {
   box-shadow: 0px 0px 2px 2px #0000001F;
 }
 
+.sticky_logo {
+  height: 80px;
+  width: auto;
+}
+
+.custom_header .sticky_logo {
+  padding-top: 0 !important;
+}
+
 /* .perspective {
   perspective: 1000px;
 }
@@ -237,7 +246,7 @@ html {
 
 @media (min-width:1200px) {
   .sticky_logo {
-    margin-left: 18%;
+    margin-left: 25%;
   }
 
   .custom_header .sticky_logo {
@@ -263,4 +272,21 @@ html {
   .swiper-horizontal {
     padding: 8px !important;
   }
+
+  .sticky_logo {
+    height: 20px;
+    width: auto;
+  }
+
+  .custom_header {
+    padding: 0.5rem;
+  }
+
+  .custom_header .sticky_logo {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+
+  }
+
 }
