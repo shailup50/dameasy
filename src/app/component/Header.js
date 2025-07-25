@@ -12,16 +12,16 @@ function Header() {
     const [isOpen, setIsOpen] = useState(false);
     const sidebarRef = useRef(null);
     const pathname = usePathname();
-    const [logoScale, setLogoScale] = useState(4); // Start at 4
-    const [addCustomHeader, setAddCustomHeader] = useState(false);
+    const [isShrunk, setIsShrunk] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
-    // Handle outside click for sidebar
+
     useEffect(() => {
-        function handleClickOutside(event) {
+        const handleClickOutside = (event) => {
             if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
                 setIsOpen(false);
             }
-        }
+        };
 
         if (isOpen) {
             document.addEventListener("mousedown", handleClickOutside);
@@ -34,68 +34,104 @@ function Header() {
     const handleLinkClick = () => setIsOpen(false);
 
     useEffect(() => {
-        const MAX_SCALE = 4;
-        const MIN_SCALE = 1;
-        const MAX_SCROLL = 30;
-
-        let hasScrolled = false;
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
 
         const handleScroll = () => {
             const scrollY = window.scrollY;
-
-            if (scrollY > 0) {
-                hasScrolled = true;
-            }
-
-            // Only scale if the user has scrolled or is currently scrolling
-            if (hasScrolled) {
-                const clampedScroll = Math.min(scrollY, MAX_SCROLL);
-                const newScale = MAX_SCALE - ((MAX_SCALE - MIN_SCALE) * clampedScroll) / MAX_SCROLL;
-                const finalScale = Math.max(MIN_SCALE, Math.min(MAX_SCALE, newScale));
-                setLogoScale(finalScale);
-
-                setAddCustomHeader(finalScale <= 1.05); // Add class when scaled down
-            }
+            const threshold = isMobile ? 50 : 100;
+            setIsShrunk(scrollY > threshold);
         };
 
-        // Set initial scale (only once, no jump later)
-        setLogoScale(MAX_SCALE);
+        checkMobile(); // Set on first mount
+        handleScroll(); // In case scroll already happened
 
+        window.addEventListener("resize", checkMobile);
         window.addEventListener("scroll", handleScroll, { passive: true });
 
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+        return () => {
+            window.removeEventListener("resize", checkMobile);
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, [isMobile]);
+
 
     return (
-        <header className={`transition-all duration-300 ease-in-out ${addCustomHeader ? "custom_header" : ""}`}>
+        <header
+            className={`transition-all duration-200 ease-in-out fixed top-0 left-0 w-full z-50
+
+            ${isShrunk ? "custom_header py-6" : "py-6"
+                }`}
+        >
             <div className="mx-auto max-w-8xl px-4 md:px-6 lg:px-8 relative z-10">
-                <div className="flex md:py-2 justify-between gap-4 items-start">
-                    <button onClick={() => setIsOpen(true)} className="text-white">
+                <div className="flex justify-between gap-4 items-start">
+                    <button onClick={() => setIsOpen(true)} className="text-white ">
                         <FiMenu size={40} className="cursor-pointer" />
                     </button>
 
+                    {/* ✅ Updated Logo with Smooth Shrink */}
                     <Link href="/" className="self-baseline">
                         <Image
                             src={logo}
                             alt="Logo"
-                            className="sticky_logo pointer-events-auto md:pt-8 transition-transform duration-500 ease-in-out"
-                            style={{ transform: `scale(${logoScale})` }}
+                            priority
+                            className={`sticky_logo transition-all duration-500 ease-in-out desktop-show`}
+                            style={{
+                                width: isMobile
+                                    ? isShrunk
+                                        ? "160px"
+                                        : "250px"
+                                    : isShrunk
+                                        ? "200px"
+                                        : "500px",
+                                height: "auto",
+                                transition: "width 0.4s ease",
+                            }}
+                        />
+                        <Image
+                            src={logo}
+                            alt="Logo"
+                            priority
+                            className={`sticky_logo transition-all duration-500 ease-in-out mobile-show`}
+                            style={{
+                                width: isShrunk ? "160px" : "250px",
+                                height: "auto",
+                                transition: "width 0.4s ease",
+                            }}
                         />
                     </Link>
 
+                    {/* Desktop Buttons */}
                     <div className="md:flex gap-2 md:gap-4 items-center hidden">
-                        <div className="bg-[#C3272B] px-4 md:px-8 py-2 md:py-3 rounded-3xl">
-                            <Image src={message} alt="Message" className="md:h-auto h-4 md:w-6 md:min-w-auto min-w-12" />
+                        <div className="bg-[#C3272B] px-4 md:px-8 py-2 md:py-3 rounded-3xl ">
+                            <Image
+                                src={message}
+                                alt="Message"
+                                className="md:h-auto h-4 md:w-6 md:min-w-auto min-w-12"
+                            />
                         </div>
 
                         {pathname === "/" && (
-                            <Link href="/contract-manufacturing-made-easy" title="Go to Products" className="bg-[#C3272B] px-3 md:px-8 py-2 md:py-3 rounded-3xl">
+                            <Link
+                                href="/contract-manufacturing-made-easy"
+                                title="Go to Products"
+                                className="bg-[#C3272B] px-3 md:px-8 py-2 md:py-3 rounded-3xl "
+                            >
                                 <Image src={arrow} alt="icon" className="h-5 w-auto" />
                             </Link>
                         )}
                         {pathname === "/contract-manufacturing-made-easy" && (
-                            <Link href="/" title="Back to Home" className="bg-[#C3272B] px-4 md:px-8 py-2 md:py-3 rounded-3xl">
-                                <Image src={arrow} alt="icon" className="h-5 w-auto rotate-180" />
+                            <Link
+                                href="/"
+                                title="Back to Home"
+                                className="bg-[#C3272B] px-4 md:px-8 py-2 md:py-3 rounded-3xl "
+                            >
+                                <Image
+                                    src={arrow}
+                                    alt="icon"
+                                    className="h-5 w-auto rotate-180"
+                                />
                             </Link>
                         )}
                     </div>
@@ -106,11 +142,15 @@ function Header() {
             <div className="bg-[#2C2E3A] relative overflow-hidden">
                 <div
                     ref={sidebarRef}
-                    className={`fixed top-0 left-0 bg-[#000] text-white w-96 z-50 h-full transform transition-transform duration-500 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
+                    className={`fixed top-0 left-0 bg-[#000] text-white w-96 z-50 h-full transform transition-transform duration-500 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full"
+                        }`}
                 >
                     <div className="mb-4 px-6 pt-6 flex items-center justify-between">
-                        <Image src={logo} alt="Logo" width="200" />
-                        <button onClick={() => setIsOpen(false)} className="bg-white w-12 h-12 rounded-full grid place-content-center ml-auto">
+                        <Image src={logo} alt="Logo" width={200} />
+                        <button
+                            onClick={() => setIsOpen(false)}
+                            className="bg-white w-12 h-12 rounded-full grid place-content-center ml-auto"
+                        >
                             <FiX size={28} className="text-[#C3272B] cursor-pointer" />
                         </button>
                     </div>
@@ -118,7 +158,11 @@ function Header() {
                     <div className="h-[1px] w-full bg-white mt-4" />
 
                     <div className="px-6 mt-10 space-y-6" id="links">
-                        <Link href="/" onClick={handleLinkClick} className="block text-xl md:text-2xl font-medium text-white hover:text-[#F8AB1D]">
+                        <Link
+                            href="/"
+                            onClick={handleLinkClick}
+                            className="block text-xl md:text-2xl font-medium text-white hover:text-[#F8AB1D]"
+                        >
                             Home
                         </Link>
                         <Link
@@ -147,7 +191,11 @@ function Header() {
                                     onClick={handleLinkClick}
                                     className="bg-[#C3272B] px-8 py-3 rounded-full inline-block md:hidden"
                                 >
-                                    <Image src={arrow} alt="icon" className="h-5 w-auto rotate-180" />
+                                    <Image
+                                        src={arrow}
+                                        alt="icon"
+                                        className="h-5 w-auto rotate-180"
+                                    />
                                 </Link>
                             )}
                         </div>

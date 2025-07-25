@@ -217,7 +217,14 @@ html {
 .sticky_logo {
   /* display: none; */
   /* transition: all 0.5s; */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-left: 0 !important;
+  margin-top: -0.8rem;
 }
+
+
 
 .custom_header .pt-4 {
   padding: 8px 6px;
@@ -235,6 +242,10 @@ html {
 
 .custom_header .rounded-3xl {
   background: #000;
+}
+
+.mobile-show {
+  display: none;
 }
 
 @media (max-width:1200px) {
@@ -260,6 +271,11 @@ html {
     margin-top: 3rem;
   }
 
+  .sticky_logo {
+    margin-top: -0.4rem !important;
+  }
+
+
   .custom_header .sticky_logo {
     margin-top: 0;
   }
@@ -274,19 +290,28 @@ html {
   }
 
   .sticky_logo {
-    height: 20px;
+    /* height: 20px; */
     width: auto;
+    left: 55%;
   }
 
   .custom_header {
-    padding: 0.5rem;
+    padding: 1.2rem 0;
   }
 
   .custom_header .sticky_logo {
-    height: 60px;
+    /* height: 60px; */
     width: auto;
     object-fit: contain;
 
+  }
+
+  .desktop-show {
+    display: none;
+  }
+
+  .mobile-show {
+    display: inline-block;
   }
 
 }
