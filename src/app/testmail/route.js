@@ -1,7 +1,9 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 
-const resend = new Resend(process.env.ER_KEY); // Replace with actual API key
+// Lazily create client so missing env key doesn't break build.
+const resendApiKey = process.env.ER_KEY;
+const getResend = () => (resendApiKey ? new Resend(resendApiKey) : null);
 
 export async function POST(req) {
   try {
@@ -15,6 +17,14 @@ export async function POST(req) {
     }
 
     const fullName = `${firstName} ${lastName || ''}`.trim();
+
+    const resend = getResend();
+    if (!resend) {
+      return NextResponse.json(
+        { success: false, message: 'Email service not configured' },
+        { status: 500 }
+      );
+    }
 
     const result = await resend.emails.send({
       from: 'info@dameasy.in',
